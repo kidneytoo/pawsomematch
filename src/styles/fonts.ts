@@ -3,22 +3,22 @@ import localFont from 'next/font/local';
 export const chulaCharas = localFont({
   src: [
     {
-      path: './ChulaCharasNew-Bold.woff2',
+      path: '../../public/fonts/ChulaCharasNew-Bold.woff2',
       weight: 'bold',
       style: 'normal',
     },
     {
-      path:  './ChulaCharasNew.woff2',
+      path:  '../../public/fonts/ChulaCharasNew.woff2',
       weight: 'normal',
       style: 'normal',
     },
     {
-      path:  './ChulaCharasNew-Italic.woff2',
+      path:  '../../public/fonts/ChulaCharasNew-Italic.woff2',
       weight: 'normal',
       style: 'italic',
     },
     {
-      path:  './ChulaCharasNew-BoldItalic.woff2',
+      path:  '../../public/fonts/ChulaCharasNew-BoldItalic.woff2',
       weight: 'bold',
       style: 'italic',
     }
@@ -29,12 +29,12 @@ export const chulaCharas = localFont({
 export const chulalongkorn = localFont({
   src: [
     {
-      path: './Chulalongkorn-Regular.woff2',
+      path: '../../public/fonts/Chulalongkorn-Regular.woff2',
       weight: 'normal',
       style: 'normal',
     },
     {
-      path:  './Chulalongkorn-Bold.woff2',
+      path:  '../../public/fonts/Chulalongkorn-Bold.woff2',
       weight: 'bold',
       style: 'normal',
     },

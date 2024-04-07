@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { chulaCharas, chulalongkorn } from "@/styles/fonts/fonts";
+import { chulaCharas, chulalongkorn } from "../styles/fonts";
 
 
 
