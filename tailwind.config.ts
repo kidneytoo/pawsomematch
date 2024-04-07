@@ -20,6 +20,7 @@ const config: Config = {
         brown: {
           bg: '#583A32',
           text: '#4F2D27',
+          'text-light': '#79473E',
         }
       },
       fontFamily: {
