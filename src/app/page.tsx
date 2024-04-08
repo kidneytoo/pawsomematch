@@ -30,7 +30,7 @@ export default function Home() {
             </div>
             <div className="my-8">
               <Link
-                href="/result"
+                href="/quiz"
                 className="bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl">
                 <>เริ่มทำแบบทดสอบ</>
               </Link>

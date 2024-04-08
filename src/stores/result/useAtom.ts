@@ -52,5 +52,15 @@ export const useResultAtom = () => {
     });
   }
 
-  return { result, setPools, filterPools, updateAnswer, addScore, removeScore }
+  const getMax3Scores = () => {
+    const sortedPools = result.pools.sort((a, b) => b.score - a.score);
+    return sortedPools.slice(0, 3).map((pool) => pool.key);
+  }
+
+  const getMostScore = () => {
+    const sortedPools = result.pools.sort((a, b) => b.score - a.score);
+    return sortedPools[0].key;
+  }
+
+  return { result, setPools, filterPools, updateAnswer, addScore, removeScore, getMax3Scores, getMostScore }
 };
