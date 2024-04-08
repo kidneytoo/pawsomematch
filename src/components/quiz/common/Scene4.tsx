@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { useSecond } from '@/hooks/useSecond';
+import Link from 'next/link';
 
 type Scene4Props = {
   toNextScene: () => void;
@@ -55,12 +56,12 @@ const Scene4 = ({ toNextScene }: Scene4Props) => {
       </div>
       {second >= 4 && (
         <div className="mt-16 mx-8">
-          <button className="my-2 w-full bg-brown-text rounded-3xl px-6 py-3 text-white text-3xl">
+          <Link href="/quiz/dog" className="my-2 block w-full bg-brown-text rounded-3xl px-6 py-3 text-white text-3xl text-center">
             คาเฟ่หมา
-          </button>
-          <button className="my-2 w-full bg-brown-text rounded-3xl px-6 py-3 text-white text-3xl">
+          </Link>
+          <Link href="/quiz/cat" className="my-2 block w-full bg-brown-text rounded-3xl px-6 py-3 text-white text-3xl text-center">
             คาเฟ่แมว
-          </button>
+          </Link>
         </div>
       )}
     </div>
