@@ -27,7 +27,7 @@ const SceneDogResult = ({ toNextScene }: SceneDogResultProps) => {
     <div className="mx-auto w-full max-w-lg min-h-screen relative">
       <Image
         className="object-cover"
-        src={dog.image.sketch}
+        src={dog?.image.sketch ?? ''}
         alt="Home BG"
         fill
       />
