@@ -6,10 +6,10 @@ import { useResultAtom } from '@/stores/result/useAtom';
 import { ANNOYED_DOGS, APARTMENT_DOGS, DOG_DESCRIPTIONS, DOG_POOLS, TIME_DOGS } from '@/constants/dog';
 import { useEffect, useState } from 'react';
 
-type SceneDogConfidentProps = {
+type SceneCatConfidentProps = {
   toNextScene: () => void;
 };
-const SceneDogConfident = ({ toNextScene }: SceneDogConfidentProps) => {
+const SceneCatConfident = ({ toNextScene }: SceneCatConfidentProps) => {
   const [current, setCurrent] = useState(1);
   const { addScore, updateAnswer } = useResultAtom();
 
@@ -87,21 +87,21 @@ const SceneDogConfident = ({ toNextScene }: SceneDogConfidentProps) => {
               <div className="px-12">
                 <button
                   className="my-2 w-full bg-brown-text rounded-2xl px-6 py-2 text-white text-2xl"
-                  onClick={() => handleScore(DOG_POOLS, 'confident')}
+                  onClick={() => handleScore([], 'confident')}
                 >
                   มั่นใจสิ...จะมอบให้<br />ทั้งเวลาและความรักเลย
                 </button>
                 <button
                   className="my-2 w-full bg-brown-text rounded-2xl px-6 py-2 text-white text-2xl"
-                  onClick={() => handleScore(ANNOYED_DOGS, 'ready')}
+                  onClick={() => handleScore([], 'can-pet')}
                 >
-                  แม้ว่าจะดื้อบ้าง แต่ก็<br />พร้อมจะฝึกและเรียนรู้เขา
+                  ถึงแม้ว่าจะไม่ว่างดูตลอด<br />แต่ก็มีคนช่วยเลี้ยงอยู่นะ
                 </button>
                 <button
                   className="my-2 w-full bg-brown-text rounded-2xl px-6 py-2 text-white text-2xl"
-                  onClick={() => handleScore(TIME_DOGS, 'time-aware')}
+                  onClick={() => handleScore([], 'time-aware')}
                 >
-                  สิ่งที่กลัวคือไม่มีเวลา<br />ให้เขานี่แหละ
+                  สิ่งที่กลัวคือเรื่องเวลา<br />กลัวดูแลได้ไม่ดีนี่แหละ
                 </button>
               </div>
             )}
@@ -112,4 +112,4 @@ const SceneDogConfident = ({ toNextScene }: SceneDogConfidentProps) => {
   );
 };
 
-export default SceneDogConfident;
+export default SceneCatConfident;
