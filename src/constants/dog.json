@@ -4,7 +4,7 @@
     "habits": ["Playful", "Extroverted", "Intelligent"],
     "image": {
       "sketch": "/images/sketch/dog/pomeranian.webp",
-      "real": ""
+      "real": "/images/real/dog/pomeranian.webp"
     },
     "details": ["ร่าเริง สดใส", "ฉลาด ฝึกง่าย", "ขี้สงสัย ชอบเห่า", "รักเจ้าของ", "ต้องออกกำลังกาย"],
     "tip": "มีขนยาวหนา 2 ชั้น เหมาะกับบ้านที่มีพื้นที่จำกัด ขี้หนาว ควรมีเสื้อกันหนาวให้น้อง น้องเห่าเก่ง ต้องการการฝึกฝน ผลัดขนปีละ 2 ครั้ง อายุขัยเฉลี่ย 12-16 ปี",
@@ -40,7 +40,7 @@
     "habits": ["Friendly", "Energetic", "Intelligent"],
     "image": {
       "sketch": "/images/sketch/dog/papillon.webp",
-      "real": ""
+      "real": "/images/real/dog/papillon.webp"
     },
     "details": ["ร่าเริง ขี้เล่น", "รักเจ้าของ", "ฉลาด ฝึกง่าย", "เห่าเก่ง", "ต้องออกกำลังกาย"],
     "tip": "ปาปิยองมีขนยาวสลวย มีลักษณะคล้ายผีเสื้อ เป็นสุนัขสายพันธุ์เล็ก เหมาะกับผู้ที่มีพื้นที่จำกัด น้องเห่าเก่ง ต้องการการฝึกฝน อายุขัยเฉลี่ย 12-16 ปี",
@@ -76,7 +76,7 @@
     "habits": ["Playful", "Affectionate", "Quiet"],
     "image": {
       "sketch": "/images/sketch/dog/pug.webp",
-      "real": ""
+      "real": "/images/real/dog/pug.webp"
     },
     "details": ["เคลื่อนไหวได้คล่องแคล่ว", "รักเจ้าของ", "ชอบสำรวจ หูตาไว ไหวพริบดี", "เข้ากันกับสัตว์อื่นและเด็กได้ดี", "เห่าไม่เก่ง"],
     "tip": "เป็นสุนัขที่ไม่ชอบเข้าสังคมเท่าสุนัขพันธุ์อื่น แม้ภายนอกจะดูเครียดแต่ที่จริงแล้วชอบเอาใจ ไม่ค่อยเห่า ไม่ค่อยดุร้าย อายุขัยเฉลี่ย 12-15 ปี",
@@ -109,7 +109,7 @@
     "habits": ["Outgoing", "Intelligent", "Friendly"],
     "image": {
       "sketch": "/images/sketch/dog/labrador.webp",
-      "real": ""
+      "real": "/images/real/dog/labrador.webp"
     },
     "details": ["ฉลาด ฝึกง่าย", "ร่าเริง เป็นมิตร", "รักเด็ก เข้ากับสัตว์อื่นได้ดี", "ชอบเล่นน้ำ ออกกำลังกาย", "กินจุ ต้องควบคุมอาหาร"],
     "tip": "ขนสั้น หนา 2 ชั้น ผลัดขนปีละ 2 ครั้ง เห่าค่อนข้างบ่อย ต้องการการฝึก ชอบกัดแทะสิ่งของ ต้องการของเล่น ต้องการพื้นที่ในการวิ่งเล่น อายุขัยเฉลี่ย 10-12 ปี",
@@ -158,7 +158,7 @@
     "habits": ["Brave", "Intelligent", "Protective"],
     "image": {
       "sketch": "/images/sketch/dog/german-shepherd.webp",
-      "real": ""
+      "real": "/images/real/dog/german-shepherd.webp"
     },
     "details": ["ฉลาด ฝึกง่าย", "กล้าหาญ รักเจ้าของ", "กระตือรือร้น ต้องออกกำลังกาย", "เห่าค่อนข้างบ่อย", "ต้องการการฝึก"],
     "tip": "ต้องการพื้นที่ในการวิ่งเล่น ต้องการการฝึกฝนอย่างสม่ำเสมอ ต้องการการเอาใจใส่ เห่าค่อนข้างบ่อย ต้องการการฝึก ขนหนา ผลัดขนปีละ 2 ครั้ง อายุขัยเฉลี่ย 10-12 ปี",
@@ -203,7 +203,7 @@
     "habits": ["Lively", "Aggeressive", "Courageous"],
     "image": {
       "sketch": "/images/sketch/dog/chihuahua.webp",
-      "real": ""
+      "real": "/images/real/dog/chihuahua.webp"
     },
     "details": ["ร่าเริง ซน ขี้เล่น", "รักเจ้าของ", "กล้าหาญ", "เห่าเก่ง", "กระตือรือร้น ต้องออกกำลังกาย"],
     "tip": "เป็นสุนัขสายพันธุ์ที่เล็กที่สุดในโลก มีขนทั้งแบบสั้นและยาว มีหลายสี เหมาะกับบ้านที่มีพื้นที่จำกัด ชอบเห่า ต้องการการฝึกฝน อายุขัยเฉลี่ย 12-20 ปี",
@@ -239,7 +239,7 @@
     "habits": ["Affectionate", "Playful", "Sociable"],
     "image": {
       "sketch": "/images/sketch/dog/cavalier-king-charles.webp",
-      "real": "[Image of Cavalier King Charles Spaniel]"
+      "real": "/images/real/dog/cavalier-king-charles.webp"
     },
     "details": [
       "อ่อนโยน สุขุม รักเจ้าของ",
@@ -282,7 +282,7 @@
     "habits": ["Affectionate", "Playful", "Trainable"],
     "image": {
       "sketch": "/images/sketch/dog/cocker-spaniel.webp",
-      "real": "[Image of Cocker Spaniel]"
+      "real": "/images/real/dog/cocker-spaniel.webp"
     },
     "details": [
       "อ่อนโยน ขี้เล่น เป็นมิตร",
@@ -335,7 +335,7 @@
     "habits": ["Affectionate", "Playful", "Trainable"],
     "image": {
       "sketch": "/images/sketch/dog/australian-shepherd.webp",
-      "real": "[Image of Australian Shepherd]"
+      "real": "/images/real/dog/australian-shepherd.webp"
     },
     "details": [
       "ฉลาด ฝึกง่าย",
@@ -387,7 +387,7 @@
     "habits": ["Affectionate", "Playful", "Friendly"],
     "image": {
       "sketch": "/images/sketch/dog/border-collie.webp",
-      "real": "[Image of Border Collie]"
+      "real": "/images/real/dog/border-collie.webp"
     },
     "details": [
       "ฉลาด ฝึกง่าย",
