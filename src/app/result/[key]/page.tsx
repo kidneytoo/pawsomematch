@@ -38,7 +38,7 @@ const ResultPage = ({ params: { key } }: ResulePageProps) => {
             <div className="w-7/12 px-2 text-center text-brown-text">
               <p className="font-bold text-lg">คุณเหมาะกับน้อง{type === 'dog' ? 'หมา' : 'แมว'}พันธุ์</p>
               <p className="font-bold text-3xl">{animal.name}</p>
-              <div className="-mx-1 my-2 flex items-center justify-between">
+              <div className="-mx-1 my-2 flex items-center justify-center">
                 {animal.habits.map((habit) => (
                   <div
                     key={habit.toLowerCase()}
