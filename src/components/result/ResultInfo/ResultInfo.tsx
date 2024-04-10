@@ -8,7 +8,7 @@ const ResultInfo = ({title, children }: ResultInfoProps) => {
       <div className="py-1 bg-brown-bg">
         <p className="text-center text-white font-bold">{title}</p>
       </div>
-      <div className="p-2 flex-grow bg-white text-brown-text text-center flex items-center">
+      <div className="py-2 px-1 flex-grow bg-white text-brown-text text-center flex items-center">
         <div className="w-full">{children}</div>
       </div>
     </div>
