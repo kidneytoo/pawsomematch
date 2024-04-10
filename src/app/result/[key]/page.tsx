@@ -1,11 +1,21 @@
-import Image from "next/image"
-import Link from "next/link"
+import Image from 'next/image';
+import Link from 'next/link';
+import { redirect } from 'next/navigation';
 
-import {getDog} from "@/helpers/dog"
-import ResultInfo from "@/components/result/ResultInfo/ResultInfo"
+import ResultInfo from '@/components/result/ResultInfo/ResultInfo';
+import { getDog } from '@/helpers/dog';
 
-const ResultPage = () => {
-  const dog = getDog("pomeranian")
+type ResulePageProps = {
+  params: {
+    key: string;
+  };
+};
+const ResultPage = ({ params: { key } }: ResulePageProps) => {
+  const dog = getDog(key);
+
+  if (!dog) {
+    redirect('/');
+  }
 
   return (
     <div className="bg-result min-h-screen">
@@ -28,7 +38,8 @@ const ResultPage = () => {
               {dog.habits.map((habit) => (
                 <div
                   key={habit.toLowerCase()}
-                  className="mx-1 px-2 py-1 rounded-full bg-brown-bg">
+                  className="mx-1 px-2 py-1 rounded-full bg-brown-bg"
+                >
                   <p className="text-white text-xs font-bold">{habit}</p>
                 </div>
               ))}
@@ -55,6 +66,29 @@ const ResultPage = () => {
           </div>
           <div className="px-1 w-1/3">
             <ResultInfo title="ขนาด">
+              {dog.weight.male ? <>
+              <table className="text-[8px] text-left">
+                <tbody>
+                  <tr>
+                    <td className="px-1 text-left font-bold">เพศผู้:</td>
+                    <td>ส่วนสูง {dog.height.male?.min}-{dog.height.male?.max} ซม.</td>
+                  </tr>
+                  <tr>
+                    <td />
+                    <td>น้ำหนัก {dog.weight.male?.min}-{dog.weight.male?.max} กก.</td>
+                  </tr>
+                  <tr>
+                    <td className="px-1 text-left font-bold">เพศเมีย:</td>
+                    <td>ส่วนสูง {dog.height.female?.min}-{dog.height.female?.max} ซม.</td>
+                  </tr>
+                  <tr>
+                    <td />
+                    <td>น้ำหนัก {dog.weight.female?.min}-{dog.weight.female?.max} กก.</td>
+                  </tr>
+                </tbody>
+              </table>
+              </>
+              : <>
               <p className="font-bold text-xs">{dog.size}</p>
               <p className="text-xs">
                 น้ำหนัก {dog.weight.min} - {dog.weight.max} กก.
@@ -62,12 +96,13 @@ const ResultPage = () => {
               <p className="text-xs">
                 ส่วนสูง {dog.height.min} - {dog.height.max} ซม.
               </p>
+              </>}
             </ResultInfo>
           </div>
           <div className="px-1 w-1/3">
             <ResultInfo title="ค่าใช้จ่าย">
               <p className="font-bold text-lg">
-                {dog.cost.min.toLocaleString()} -{" "}
+                {dog.cost.min.toLocaleString()} -{' '}
                 {dog.cost.max.toLocaleString()}
               </p>
               <p>บาท/เดือน</p>
@@ -79,7 +114,7 @@ const ResultPage = () => {
             <ResultInfo title="สิ่งที่น้องต้องการ">
               <ul className="px-2 text-left text-sm">
                 {dog.wanting.map((want) => (
-                  <li key={want}>• {want}</li>
+                  <li key={want}>{dog.wanting.length > 1 && '•'} {want}</li>
                 ))}
               </ul>
             </ResultInfo>
@@ -101,7 +136,7 @@ const ResultPage = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ResultPage
+export default ResultPage;

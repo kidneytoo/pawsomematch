@@ -8,14 +8,30 @@ export type AnimalResult = {
   details: string[];
   tip: string;
   place: string;
-  size: string;
+  size?: string;
   height: {
-    min: number;
-    max: number;
+    min?: number;
+    max?: number;
+    male?: {
+      min: number;
+      max: number
+    };
+    female?: {
+      min: number;
+      max: number
+    }
   };
   weight: {
-    min: number;
-    max: number;
+    min?: number;
+    max?: number;
+    male?: {
+      min: number;
+      max: number
+    };
+    female?: {
+      min: number;
+      max: number
+    }
   };
   cost: {
     min: number;

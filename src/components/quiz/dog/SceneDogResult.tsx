@@ -15,11 +15,11 @@ const SceneDogResult = ({ toNextScene }: SceneDogResultProps) => {
   const [current, setCurrent] = useState(1);
   const { getMostScore } = useResultAtom();
 
-  const dog = getDog('pomeranian');
+  const dog = getDog(getMostScore());
 
   useEffect(() => {
     if (current > 2) {
-      redirect('/result');
+      redirect(`/result/${getMostScore()}`);
     }
   }, [current]);
 
