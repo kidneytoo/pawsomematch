@@ -4,21 +4,29 @@ import FadeIn from '../../animation/FadeIn';
 
 import { useResultAtom } from '@/stores/result/useAtom';
 import { useEffect, useState } from 'react';
+import { CAT_DESCRIPTIONS } from '@/constants/cat';
 
 type SceneCatHabitProps = {
   toNextScene: () => void;
 };
 const SceneCatHabit = ({ toNextScene }: SceneCatHabitProps) => {
   const [current, setCurrent] = useState(1);
-  const { updateAnswer } = useResultAtom();
+  const { addScore, updateAnswer, getMax3Scores } = useResultAtom();
 
   const answer = (answer: string) => {
     updateAnswer(answer);
-    setCurrent(current + 1);
+    setCurrent(3);
+  };
+
+  const selectHabit = (key: string) => {
+    addScore([key]);
+    addScore([key]);
+    updateAnswer(key);
+    toNextScene();
   };
 
   useEffect(() => {
-    if (current > 4) {
+    if (current > 3) {
       toNextScene();
     }
   }, [current]);
@@ -35,27 +43,22 @@ const SceneCatHabit = ({ toNextScene }: SceneCatHabitProps) => {
       <FadeIn>
         <div
           className="absolute inset-x-0 bottom-1/2 translate-y-1/2 z-20"
-          onClick={() => (current === 1 || current === 3) && setCurrent(current + 1)}
+          onClick={() => current === 1 && setCurrent(current + 1)}
         >
-          <div className="mt-auto text-brown-bg text-center text-2xl flex flex-col items-center">
+          <div className="mt-auto text-brown-bg text-center text-3xl flex flex-col items-center">
             {current <= 2 && (
               <>
                 <p>แต่ดูหน้าน้องสิ ชอบไม่ใช่หรอพันธ์ุนี้</p>
                 <p>หากพยายามจนไม่เหลือปัญหา…</p>
-                <p className="mb-2">อยากเลี้ยงน้องเลยไหมล่ะ</p>
+                <p className="mb-4">อยากเลี้ยงน้องเลยไหมล่ะ</p>
               </>
             )}
             {current === 3 && (
               <>
-                <p className="mb-2">งั้นลองมาหาเลี้ยงสักตัวแล้วล่ะ</p>
+                <p className="mb-4">ชอบหมาแบบไหนมากกว่ากัน</p>
               </>
             )}
-            {current === 4 && (
-              <>
-                <p className="mb-2">อยากเลี้ยงเพราะอะไรหรอ</p>
-              </>
-            )}
-            {current === 1 || current === 3 && (
+            {current === 1 && (
               <Image
                 className="mt-8"
                 src="/images/icons/right-arrow-black.svg"
@@ -67,34 +70,31 @@ const SceneCatHabit = ({ toNextScene }: SceneCatHabitProps) => {
             {current === 2 && (
               <div className="px-12">
                 <button
-                  className="my-2 w-full bg-brown-text rounded-2xl px-6 py-2 text-white text-2xl"
+                  className="my-1 w-full bg-brown-text rounded-2xl px-6 py-2 text-white text-2xl"
                   onClick={() => answer('sure')}
                 >
                   แน่นอนสิ
                 </button>
                 <button
-                  className="my-2 w-full bg-brown-text rounded-2xl px-6 py-2 text-white text-2xl"
+                  className="my-1 w-full bg-brown-text rounded-2xl px-6 py-2 text-white text-2xl"
                   onClick={() => answer('dont-know')}
                 >
                   ไม่รู้เหมือนกัน
                 </button>
               </div>
             )}
-            {current === 4 && (
+            {current === 3 && (
               <div className="px-12">
-              <button
-                className="my-2 w-full bg-brown-text rounded-2xl px-6 py-2 text-white text-2xl"
-                onClick={() => answer('lonely-fix')}
-              >
-                เลี้ยงไว้แก้เหงา
-              </button>
-              <button
-                className="my-2 w-full bg-brown-text rounded-2xl px-6 py-2 text-white text-2xl"
-                onClick={() => answer('for-friend')}
-              >
-                เลี้ยงไว้เป็นเพื่อนคู่ใจ
-              </button>
-            </div>
+                {getMax3Scores().map((key) => (
+                  <button
+                    key={key}
+                    className="my-1 w-full bg-brown-text rounded-2xl px-6 py-2 text-white text-2xl"
+                    onClick={() => selectHabit(key)}
+                  >
+                    {CAT_DESCRIPTIONS[key]}
+                  </button>
+                ))}
+              </div>
             )}
           </div>
         </div>

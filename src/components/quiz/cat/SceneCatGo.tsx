@@ -32,20 +32,20 @@ const SceneCatGo = ({ toNextScene }: SceneDog3Props) => {
           className="absolute inset-x-0 bottom-1/2 translate-y-1/2 z-20"
           onClick={() => setCurrent(current + 1)}
         >
-          <div className="mt-auto text-brown-bg text-center text-2xl flex flex-col items-center">
+          <div className="mt-auto text-brown-bg text-center text-3xl flex flex-col items-center">
             {current === 1 && (
-              <p className="mb-8">คุณเตรียมตัวออกไปเจอเพื่อน</p>
+              <p className="mb-12">คุณเตรียมตัวออกไปเจอเพื่อน</p>
             )}
             {current === 2 && (
               <>
                 <p>ถึงคาเฟ่แล้ว ได้เวลาเข้าไปหา</p>
-                <p className="mb-8">น้องแมวแสนน่ารักแล้วสิ ...</p>
+                <p className="mb-12">น้องแมวแสนน่ารักแล้วสิ ...</p>
               </>
             )}
             {current === 3 && (
               <>
                 <p>ระหว่างสั่งเครื่องดื่ม</p>
-                <p className="mb-8">พนักงานถามว่า</p>
+                <p className="mb-12">พนักงานถามว่า</p>
               </>
             )}
             <Image

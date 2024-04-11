@@ -33,12 +33,12 @@ const SceneDog4 = ({ toNextScene }: SceneDog4Props) => {
             <p className="my-2">วันนี้สนใจไปโซนไหนดีคะ</p>
             <button
             className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
-            onClick={() => handleSelect([...SMALL_DOGS, ...MEDIUM_DOGS], 'small')}>
+            onClick={() => handleSelect(SMALL_DOGS, 'small')}>
             โซนน้องหมาพันธุ์เล็ก
           </button>
           <button
             className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
-            onClick={() => handleSelect(DOG_POOLS, 'medium')}>
+            onClick={() => handleSelect(MEDIUM_DOGS, 'medium')}>
             โซนน้องหมาพันธุ์กลาง
           </button>
           <button

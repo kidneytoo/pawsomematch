@@ -31,7 +31,7 @@ export const DOG_DESCRIPTIONS: Record<string, string> = {
   cockerSpaniel: 'อ่อนโยน เข้ากับคนอื่นได้ดี มีเสน่ห์ดึงดูด และมีชีวิตชีวา',
   australianShepherd: 'มีความกระตือรือร้นสูงและมีชีวิตชีวามาก',
   papillon: 'มีชีวิตชีวา และกระตือรือล้น ไม่เห่ามากนัก',
-  borderCollie: 'เป็นสุนัขที่กระตือรือล้น ชอบทำงาน ',
+  borderCollie: 'เป็นสุนัขที่กระตือรือล้น ชอบทำกิจกรรม ',
 };
 
 export const ANNOYED_DOGS = ['labrador', 'germanShepherd', 'cavalierKingCharles', 'borderCollie'];
