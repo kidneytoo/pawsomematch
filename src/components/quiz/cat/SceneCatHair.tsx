@@ -19,7 +19,10 @@ const SceneCatHair = ({ toNextScene }: SceneDog6Props) => {
   };
 
   return (
-    <div className="mx-auto w-full max-w-lg min-h-screen relative">
+    <div
+      className="mx-auto w-full max-w-lg min-h-screen relative"
+      onClick={() => current < 3 && setCurrent(current + 1)}
+    >
       <Image
         className="object-cover"
         src="/images/quiz/bg-touching-pet.webp"
@@ -28,15 +31,12 @@ const SceneCatHair = ({ toNextScene }: SceneDog6Props) => {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent bg-opacity-50 z-10" />
       <FadeIn>
-        <div
-          className="absolute inset-x-0 bottom-24 z-20 px-16"
-          onClick={() => setCurrent(current + 1)}
-        >
+        <div className="absolute inset-x-0 bottom-24 z-20 px-16">
           {current < 3 && (
             <div className="mt-auto text-white text-center text-3xl flex flex-col items-center">
               {current === 1 ? (
                 <>
-                  <p className="my-1">คุณเห็นน้องหมามากมาย</p>
+                  <p className="my-1">คุณเห็นน้องแมวมากมาย</p>
                   <p className="my-1">ที่พร้อมจะเล่นกับคุณ</p>
                 </>
               ) : (

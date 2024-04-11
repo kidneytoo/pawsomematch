@@ -6,7 +6,10 @@ type Scene1Props = {
 };
 const Scene1 = ({ toNextScene }: Scene1Props) => {
   return (
-    <div className="mx-auto w-full max-w-lg min-h-screen relative">
+    <div
+      className="mx-auto w-full max-w-lg min-h-screen relative"
+      onClick={() => toNextScene()}
+    >
       <Image
         className="object-cover"
         src="/images/home/bg-home-01.webp"
@@ -15,10 +18,7 @@ const Scene1 = ({ toNextScene }: Scene1Props) => {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent bg-opacity-50 z-10" />
       <FadeIn>
-        <div
-          className="absolute inset-x-0 bottom-24 z-20"
-          onClick={() => toNextScene()}
-        >
+        <div className="absolute inset-x-0 bottom-24 z-20">
           <div className="mt-auto text-white text-center text-3xl flex flex-col items-center">
             <p className="my-1">คุณตื่นขึ้นมาพร้อม</p>
             <p>เสียงนาฬิกาปลุกที่ดังขึ้น</p>

@@ -3,7 +3,13 @@ import Image from 'next/image';
 import FadeIn from '../../animation/FadeIn';
 
 import { useResultAtom } from '@/stores/result/useAtom';
-import { ANNOYED_DOGS, APARTMENT_DOGS, DOG_DESCRIPTIONS, DOG_POOLS, TIME_DOGS } from '@/constants/dog';
+import {
+  ANNOYED_DOGS,
+  APARTMENT_DOGS,
+  DOG_DESCRIPTIONS,
+  DOG_POOLS,
+  TIME_DOGS,
+} from '@/constants/dog';
 import { useEffect, useState } from 'react';
 
 type SceneDogConfidentProps = {
@@ -31,7 +37,10 @@ const SceneDogConfident = ({ toNextScene }: SceneDogConfidentProps) => {
   }, [current]);
 
   return (
-    <div className="mx-auto w-full max-w-lg min-h-screen relative">
+    <div
+      className="mx-auto w-full max-w-lg min-h-screen relative"
+      onClick={() => current === 2 && setCurrent(current + 1)}
+    >
       <Image
         className="object-cover"
         src="/images/quiz/scene3/loop4.webp"
@@ -40,10 +49,7 @@ const SceneDogConfident = ({ toNextScene }: SceneDogConfidentProps) => {
       />
       <div className="absolute inset-0 bg-white bg-opacity-20 z-10" />
       <FadeIn>
-        <div
-          className="absolute inset-x-0 bottom-1/2 translate-y-1/2 z-20"
-          onClick={() => current === 2 && setCurrent(current + 1)}
-        >
+        <div className="absolute inset-x-0 bottom-1/2 translate-y-1/2 z-20">
           <div className="mt-auto text-brown-bg text-center text-3xl flex flex-col items-center">
             {current === 1 && (
               <>
@@ -89,19 +95,25 @@ const SceneDogConfident = ({ toNextScene }: SceneDogConfidentProps) => {
                   className="my-1 w-full bg-brown-text rounded-2xl px-6 py-2 text-white text-2xl"
                   onClick={() => handleScore(DOG_POOLS, 'confident')}
                 >
-                  มั่นใจสิ...จะมอบให้<br />ทั้งเวลาและความรักเลย
+                  มั่นใจสิ...จะมอบให้
+                  <br />
+                  ทั้งเวลาและความรักเลย
                 </button>
                 <button
                   className="my-1 w-full bg-brown-text rounded-2xl px-6 py-2 text-white text-2xl"
                   onClick={() => handleScore(ANNOYED_DOGS, 'ready')}
                 >
-                  แม้ว่าจะดื้อบ้าง แต่ก็<br />พร้อมจะฝึกและเรียนรู้เขา
+                  แม้ว่าจะดื้อบ้าง แต่ก็
+                  <br />
+                  พร้อมจะฝึกและเรียนรู้เขา
                 </button>
                 <button
                   className="my-1 w-full bg-brown-text rounded-2xl px-6 py-2 text-white text-2xl"
                   onClick={() => handleScore(TIME_DOGS, 'time-aware')}
                 >
-                  สิ่งที่กลัวคือไม่มีเวลา<br />ให้เขานี่แหละ
+                  สิ่งที่กลัวคือไม่มีเวลา
+                  <br />
+                  ให้เขานี่แหละ
                 </button>
               </div>
             )}

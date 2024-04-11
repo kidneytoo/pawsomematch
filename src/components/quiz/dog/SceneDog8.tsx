@@ -44,7 +44,6 @@ const SceneDog8 = ({ toNextScene }: SceneDog8Props) => {
       <FadeIn>
         <div
           className="absolute inset-x-0 bottom-24 z-20 px-12"
-          onClick={() => setCurrent(current + 1)}
         >
           {current === 1 && (
             <div className="mt-auto text-white text-center text-3xl flex flex-col items-center">

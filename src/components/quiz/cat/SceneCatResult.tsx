@@ -23,7 +23,10 @@ const SceneCatResult = ({ toNextScene }: SceneDogResultProps) => {
   }, [current]);
 
   return (
-    <div className="mx-auto w-full max-w-lg min-h-screen relative">
+    <div
+      className="mx-auto w-full max-w-lg min-h-screen relative"
+      onClick={() => setCurrent(current + 1)}
+    >
       <Image
         className="object-cover"
         src={cat?.image.sketch ?? ''}
@@ -36,10 +39,7 @@ const SceneCatResult = ({ toNextScene }: SceneDogResultProps) => {
       )}
       {current === 1 && (
         <FadeIn>
-          <div
-            className="absolute inset-x-0 bottom-1/2 translate-y-1/2 z-20"
-            onClick={() => current === 1 && setCurrent(current + 1)}
-          >
+          <div className="absolute inset-x-0 bottom-1/2 translate-y-1/2 z-20">
             <div className="mt-auto text-white text-center text-3xl flex flex-col items-center">
               <>
                 <p>รู้ใจตัวเองดีนะ ...</p>
@@ -58,15 +58,13 @@ const SceneCatResult = ({ toNextScene }: SceneDogResultProps) => {
       )}
       {current === 2 && (
         <FadeIn>
-        <div
-          className="absolute inset-x-0 bottom-24 z-20 px-16"
-          onClick={() => setCurrent(current + 1)}
-        >
+          <div className="absolute inset-x-0 bottom-24 z-20 px-16">
             <div className="mt-auto text-white text-center text-3xl flex flex-col items-center">
-
-                <>
-                  <p className="my-2 whitespace-nowrap">คุณมองน้องเป็นครั้งสุดท้าย...</p>
-                </>
+              <>
+                <p className="my-2 whitespace-nowrap">
+                  คุณมองน้องเป็นครั้งสุดท้าย...
+                </p>
+              </>
               <Image
                 className="mt-8"
                 src="/images/icons/right-arrow.svg"
@@ -75,8 +73,8 @@ const SceneCatResult = ({ toNextScene }: SceneDogResultProps) => {
                 height={15}
               />
             </div>
-        </div>
-      </FadeIn>
+          </div>
+        </FadeIn>
       )}
     </div>
   );

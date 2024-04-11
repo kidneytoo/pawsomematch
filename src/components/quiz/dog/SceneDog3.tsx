@@ -19,7 +19,10 @@ const SceneDog3 = ({ toNextScene }: SceneDog3Props) => {
   }, [current]);
 
   return (
-    <div className="mx-auto w-full max-w-lg min-h-screen relative">
+    <div
+      className="mx-auto w-full max-w-lg min-h-screen relative"
+      onClick={() => setCurrent(current + 1)}
+    >
       <Image
         className="object-cover"
         src="/images/quiz/scene3/loop4.webp"
@@ -28,10 +31,7 @@ const SceneDog3 = ({ toNextScene }: SceneDog3Props) => {
       />
       <div className="absolute inset-0 bg-white bg-opacity-20 z-10" />
       <FadeIn>
-        <div
-          className="absolute inset-x-0 bottom-1/2 translate-y-1/2 z-20"
-          onClick={() => setCurrent(current + 1)}
-        >
+        <div className="absolute inset-x-0 bottom-1/2 translate-y-1/2 z-20">
           <div className="mt-auto text-brown-bg text-center text-3xl flex flex-col items-center">
             {current === 1 && (
               <p className="mb-12">คุณเตรียมตัวออกไปเจอเพื่อน</p>

@@ -31,7 +31,10 @@ const SceneDog7 = ({ toNextScene }: SceneDog6Props) => {
   };
 
   return (
-    <div className="mx-auto w-full max-w-lg min-h-screen relative">
+    <div
+      className="mx-auto w-full max-w-lg min-h-screen relative"
+      onClick={() => current < 3 && setCurrent(current + 1)}
+    >
       <Image
         className="object-cover"
         src={
@@ -44,10 +47,7 @@ const SceneDog7 = ({ toNextScene }: SceneDog6Props) => {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent bg-opacity-50 z-10" />
       <FadeIn>
-        <div
-          className="absolute inset-x-0 bottom-24 z-20 px-12"
-          onClick={() => setCurrent(current + 1)}
-        >
+        <div className="absolute inset-x-0 bottom-24 z-20 px-12">
           {current < 3 && (
             <div className="mt-auto text-white text-center text-3xl flex flex-col items-center">
               {current === 1 ? (
@@ -57,7 +57,9 @@ const SceneDog7 = ({ toNextScene }: SceneDog6Props) => {
               ) : (
                 <>
                   <p className="my-1">ชอบจริง ๆ เลยนะหมาเนี่ย</p>
-                  <p className="my-1 whitespace-nowrap">เห็นบ่นอยากเลี้ยงอยู่นั่นแหละ...</p>
+                  <p className="my-1 whitespace-nowrap">
+                    เห็นบ่นอยากเลี้ยงอยู่นั่นแหละ...
+                  </p>
                   <p className="my-1">ทำไมไม่เลี้ยงไว้สักตัวล่ะ</p>
                 </>
               )}

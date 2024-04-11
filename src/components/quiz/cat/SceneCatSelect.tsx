@@ -25,11 +25,16 @@ const SceneCatSelect = ({ toNextScene }: SceneDog5Props) => {
   };
 
   return (
-    <div className="mx-auto w-full max-w-lg min-h-screen relative">
+    <div
+      className="mx-auto w-full max-w-lg min-h-screen relative"
+      onClick={() => current < 3 && setCurrent(current + 1)}
+    >
       <Image
         className="object-cover"
         src={
-          current < 3 ? '/images/quiz/bg-staff-cat.webp' : '/images/quiz/scene3/loop4.webp'
+          current < 3
+            ? '/images/quiz/bg-staff-cat.webp'
+            : '/images/quiz/scene3/loop4.webp'
         }
         alt="Home BG"
         fill
@@ -41,7 +46,6 @@ const SceneCatSelect = ({ toNextScene }: SceneDog5Props) => {
         {current < 3 && (
           <div
             className="absolute inset-x-0 bottom-24 z-20 px-16"
-            onClick={() => setCurrent(current + 1)}
           >
             <div className="mt-auto text-white text-center text-3xl flex flex-col items-center">
               {current === 1 ? (
@@ -67,10 +71,7 @@ const SceneCatSelect = ({ toNextScene }: SceneDog5Props) => {
           </div>
         )}
         {current === 3 && (
-          <div
-            className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-20 px-16"
-            onClick={() => setCurrent(current + 1)}
-          >
+          <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-20 px-16">
             <div className="mt-auto text-center text-3xl flex flex-col items-center">
               <p className="my-1">คุณเห็นน้องแมวมากมาย</p>
               <p className="my-1">บางตัวเข้ามาหา</p>
