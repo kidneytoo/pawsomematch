@@ -37,10 +37,10 @@ const Scene3 = ({ toNextScene }: Scene2Props) => {
             className="mb-8"
             src="/images/icons/lock-brown.svg"
             alt="Lock"
-            width={30}
-            height={30}
+            width={32}
+            height={32}
           />
-          <p className="text-brown-text-light text-7xl font-bold">07:00</p>
+          <p className="text-brown-text-light text-9xl font-bold">07:00</p>
           {second >= 2 && (
             <div className="mt-4 w-full relative rounded-3xl px-4 py-4 flex items-center bg-white">
               <Image

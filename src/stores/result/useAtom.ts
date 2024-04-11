@@ -5,25 +5,25 @@ export const useResultAtom = () => {
   const [result, setResult] = useAtom(resultAtom);
 
   const setPools = (pools: string[]) => {
-    setResult({
-      ...result,
+    setResult((prev) => ({
+      ...prev,
       pools: pools.map((dog) => ({ key: dog, score: 0 })),
-    });
+    }));
   };
 
   const filterPools = (pools: string[]) => {
     const filteredResult = result.pools.filter((pool) => pools.includes(pool.key));
-    setResult({
-      ...result,
+    setResult((prev) => ({
+      ...prev,
       pools: filteredResult,
-    });
+    }));
   }
 
   const updateAnswer = (answer: string) => {
-    setResult({
-      ...result,
+    setResult(prev => ({
+      ...prev,
       answer: [...result.answer, answer],
-    });
+    }));
   }
 
   const addScore = (pools: string[]) => {
@@ -33,10 +33,10 @@ export const useResultAtom = () => {
       }
       return pool;
     });
-    setResult({
-      ...result,
+    setResult((prev) => ({
+      ...prev,
       pools: updatedPools,
-    });
+    }));
   }
 
   const removeScore = (pools: string[]) => {
@@ -46,10 +46,10 @@ export const useResultAtom = () => {
       }
       return pool;
     });
-    setResult({
+    setResult(prev => ({
       ...result,
       pools: updatedPools,
-    });
+    }));
   }
 
   const getMax3Scores = () => {

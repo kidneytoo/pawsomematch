@@ -45,24 +45,24 @@ const SceneDog7 = ({ toNextScene }: SceneDog6Props) => {
       <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent bg-opacity-50 z-10" />
       <FadeIn>
         <div
-          className="absolute inset-x-0 bottom-48 z-20 px-12"
+          className="absolute inset-x-0 bottom-24 z-20 px-12"
           onClick={() => setCurrent(current + 1)}
         >
           {current < 3 && (
-            <div className="mt-auto text-white text-center text-2xl flex flex-col items-center">
+            <div className="mt-auto text-white text-center text-3xl flex flex-col items-center">
               {current === 1 ? (
                 <>
-                  <p className="my-2">เพื่อนของคุณเดินเข้ามาหา</p>
+                  <p className="my-1">เพื่อนของคุณเดินเข้ามาหา</p>
                 </>
               ) : (
                 <>
-                  <p className="my-2">ชอบจริง ๆ เลยนะหมาเนี่ย</p>
-                  <p className="my-2">เห็นบ่นอยากเลี้ยงอยู่นั่นแหละ ...</p>
-                  <p className="my-2">ทำไมไม่เลี้ยงไว้สักตัวล่ะ</p>
+                  <p className="my-1">ชอบจริง ๆ เลยนะหมาเนี่ย</p>
+                  <p className="my-1 whitespace-nowrap">เห็นบ่นอยากเลี้ยงอยู่นั่นแหละ...</p>
+                  <p className="my-1">ทำไมไม่เลี้ยงไว้สักตัวล่ะ</p>
                 </>
               )}
               <Image
-                className="mt-4"
+                className="mt-6"
                 src="/images/icons/right-arrow.svg"
                 alt="Right Arrow"
                 width={30}
@@ -71,16 +71,16 @@ const SceneDog7 = ({ toNextScene }: SceneDog6Props) => {
             </div>
           )}
           {current === 3 && (
-            <div className="mt-auto text-white text-center text-2xl flex flex-col items-center">
-              <p className="my-2">ติดเรื่องเวลาหรอ?</p>
+            <div className="mt-auto text-white text-center text-3xl flex flex-col items-center">
+              <p className="mb-4">ติดเรื่องเวลาหรอ?</p>
               <button
-                className="my-2 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
+                className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
                 onClick={() => handleSelect([], 'no-time')}
               >
                 ใช่ กลัวจะไม่มีเวลาให้น้องเลย
               </button>
               <button
-                className="my-2 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
+                className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
                 onClick={() => handleSelect(NEED_TIME_DOGS, 'have-time')}
               >
                 ไม่ถึงขนาดนั้นนะ
@@ -88,7 +88,7 @@ const SceneDog7 = ({ toNextScene }: SceneDog6Props) => {
                 มีเวลาให้น้องพอตัวเลย
               </button>
               <button
-                className="my-2 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
+                className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
                 onClick={() => handleSelect(DOG_POOLS, 'have-time-full')}
               >
                 ไม่ห่วงเรื่องนั้นเลย

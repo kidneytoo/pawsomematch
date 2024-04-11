@@ -14,10 +14,10 @@ const Scene2 = ({ toNextScene }: Scene2Props) => {
             className="mb-8"
             src="/images/icons/lock.svg"
             alt="Lock"
-            width={30}
-            height={30}
+            width={32}
+            height={32}
           />
-          <p className="text-white text-7xl font-bold">07:00</p>
+          <p className="text-white text-9xl font-bold">07:00</p>
         </div>
       </div>
         <div
@@ -26,10 +26,10 @@ const Scene2 = ({ toNextScene }: Scene2Props) => {
         >
           <div className="mt-auto text-white text-center text-2xl flex flex-col items-center">
             <p className="mb-8 text-4xl font-bold">นาฬิกาปลุก</p>
-            <div className="mb-16 px-4 py-4 w-60 rounded-full bg-[#E9A343]">
+            <div className="mx-4 mb-16 px-4 py-4 w-60 rounded-full bg-[#E9A343]">
               <p>หยุด</p>
             </div>
-            <p className="text-white text-sm">กดหยุดนาฬิกาปลุกเพื่อไปต่อ</p>
+            <p className="text-white text-lg">กดหยุดนาฬิกาปลุกเพื่อไปต่อ</p>
           </div>
         </div>
     </div>

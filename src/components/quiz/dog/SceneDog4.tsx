@@ -27,22 +27,22 @@ const SceneDog4 = ({ toNextScene }: SceneDog4Props) => {
       <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent bg-opacity-50 z-10" />
       <FadeIn>
         <div
-          className="absolute inset-x-0 bottom-48 z-20 px-16"
+          className="absolute inset-x-0 bottom-24 z-20 px-16"
         >
-          <div className="mt-auto text-white text-center text-2xl flex flex-col items-center">
+          <div className="mt-auto text-white text-center text-3xl flex flex-col items-center">
             <p className="my-2">วันนี้สนใจไปโซนไหนดีคะ</p>
             <button
-            className="my-2 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
+            className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
             onClick={() => handleSelect([...SMALL_DOGS, ...MEDIUM_DOGS], 'small')}>
             โซนน้องหมาพันธุ์เล็ก
           </button>
           <button
-            className="my-2 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
+            className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
             onClick={() => handleSelect(DOG_POOLS, 'medium')}>
             โซนน้องหมาพันธุ์กลาง
           </button>
           <button
-            className="my-2 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
+            className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
             onClick={() => handleSelect([...MEDIUM_DOGS, ...LARGE_DOGS], 'large')}>
             โซนน้องหมาพันธุ์ใหญ่
           </button>

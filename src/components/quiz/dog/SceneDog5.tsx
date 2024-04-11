@@ -43,24 +43,24 @@ const SceneDog5 = ({ toNextScene }: SceneDog5Props) => {
       <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent bg-opacity-50 z-10" />
       <FadeIn>
         <div
-          className="absolute inset-x-0 bottom-48 z-20 px-16"
+          className="absolute inset-x-0 bottom-24 z-20 px-16"
           onClick={() => setCurrent(current + 1)}
         >
           {current < 3 && (
-            <div className="mt-auto text-white text-center text-2xl flex flex-col items-center">
+            <div className="mt-auto text-white text-center text-3xl flex flex-col items-center">
               {current === 1 ? (
                 <>
-                  <p className="my-2">พนักงานพาคุณและเพื่อน</p>
-                  <p className="my-2">ไปที่โซน{getText()}</p>
+                  <p className="my-1">พนักงานพาคุณและเพื่อน</p>
+                  <p className="my-1">ไปที่โซน{getText()}</p>
                 </>
               ) : (
                 <>
-                  <p className="my-2">ระหว่างเดินไปคุณได้ยิน</p>
-                  <p className="my-2">เสียงหมาเห่าดังขึ้นเรื่อย ๆ</p>
+                  <p className="my-1">ระหว่างเดินไปคุณได้ยิน</p>
+                  <p className="my-1">เสียงหมาเห่าดังขึ้นเรื่อย ๆ</p>
                 </>
               )}
               <Image
-                className="mt-4"
+                className="mt-8"
                 src="/images/icons/right-arrow.svg"
                 alt="Right Arrow"
                 width={30}
@@ -69,22 +69,24 @@ const SceneDog5 = ({ toNextScene }: SceneDog5Props) => {
             </div>
           )}
           {current === 3 && (
-            <div className="mt-auto text-white text-center text-2xl flex flex-col items-center">
-              <p className="my-2">วันนี้สนใจไปโซนไหนดีคะ</p>
+            <div className="mt-auto text-white text-center text-3xl flex flex-col items-center">
+              <p className="my-1">ระหว่างเดินไปคุณได้ยิน</p>
+              <p className="my-1">เสียงหมาเห่าดังขึ้นเรื่อย ๆ</p>
+              <p className="mb-6">คุณรู้สึกอย่างไร</p>
               <button
-                className="my-2 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
+                className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
                 onClick={() => handleSelect('annoy')}
               >
                 รำคาญเสียงหมาเห่า
               </button>
               <button
-                className="my-2 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
+                className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
                 onClick={() => handleSelect('neutral')}
               >
                 เฉย ๆ ธรรมชาติของหมา
               </button>
               <button
-                className="my-2 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
+                className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
                 onClick={() => handleSelect('excited')}
               >
                 ตื่นเต้นที่จะได้พบน้องหมา

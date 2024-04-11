@@ -16,14 +16,14 @@ const Scene1 = ({ toNextScene }: Scene1Props) => {
       <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent bg-opacity-50 z-10" />
       <FadeIn>
         <div
-          className="absolute left-1/2 -translate-x-1/2 bottom-48 z-20"
+          className="absolute inset-x-0 bottom-24 z-20"
           onClick={() => toNextScene()}
         >
-          <div className="mt-auto text-white text-center text-2xl flex flex-col items-center">
-            <p className="my-2">คุณตื่นขึ้นมาพร้อม</p>
-            <p className="my-2">เสียงนาฬิกาปลุกที่ดังขึ้น</p>
+          <div className="mt-auto text-white text-center text-3xl flex flex-col items-center">
+            <p className="my-1">คุณตื่นขึ้นมาพร้อม</p>
+            <p>เสียงนาฬิกาปลุกที่ดังขึ้น</p>
             <Image
-              className="mt-4"
+              className="mt-6"
               src="/images/icons/right-arrow.svg"
               alt="Right Arrow"
               width={30}

@@ -45,17 +45,17 @@ const SceneDogHabit = ({ toNextScene }: SceneDogHabitProps) => {
           className="absolute inset-x-0 bottom-1/2 translate-y-1/2 z-20"
           onClick={() => current === 1 && setCurrent(current + 1)}
         >
-          <div className="mt-auto text-brown-bg text-center text-2xl flex flex-col items-center">
+          <div className="mt-auto text-brown-bg text-center text-3xl flex flex-col items-center">
             {current <= 2 && (
               <>
                 <p>แต่ดูหน้าน้องสิ ชอบไม่ใช่หรอพันธ์ุนี้</p>
                 <p>หากพยายามจนไม่เหลือปัญหา…</p>
-                <p className="mb-2">อยากเลี้ยงน้องเลยไหมล่ะ</p>
+                <p className="mb-4">อยากเลี้ยงน้องเลยไหมล่ะ</p>
               </>
             )}
             {current === 3 && (
               <>
-                <p className="mb-2">ชอบหมาแบบไหนมากกว่ากัน</p>
+                <p className="mb-4">ชอบหมาแบบไหนมากกว่ากัน</p>
               </>
             )}
             {current === 1 && (
@@ -70,13 +70,13 @@ const SceneDogHabit = ({ toNextScene }: SceneDogHabitProps) => {
             {current === 2 && (
               <div className="px-12">
                 <button
-                  className="my-2 w-full bg-brown-text rounded-2xl px-6 py-2 text-white text-2xl"
+                  className="my-1 w-full bg-brown-text rounded-2xl px-6 py-2 text-white text-2xl"
                   onClick={() => answer('sure')}
                 >
                   แน่นอนสิ
                 </button>
                 <button
-                  className="my-2 w-full bg-brown-text rounded-2xl px-6 py-2 text-white text-2xl"
+                  className="my-1 w-full bg-brown-text rounded-2xl px-6 py-2 text-white text-2xl"
                   onClick={() => answer('dont-know')}
                 >
                   ไม่รู้เหมือนกัน
@@ -88,7 +88,7 @@ const SceneDogHabit = ({ toNextScene }: SceneDogHabitProps) => {
                 {getMax3Scores().map((key) => (
                   <button
                     key={key}
-                    className="my-2 w-full bg-brown-text rounded-2xl px-6 py-2 text-white text-2xl"
+                    className="my-1 w-full bg-brown-text rounded-2xl px-6 py-2 text-white text-2xl"
                     onClick={() => selectHabit(key)}
                   >
                     {DOG_DESCRIPTIONS[key]}

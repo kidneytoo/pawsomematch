@@ -5,6 +5,7 @@ import ResultImage from '@/components/result/ResultImage/ResultImage';
 import ResultInfo from '@/components/result/ResultInfo/ResultInfo';
 import { getDog } from '@/helpers/dog';
 import { getCat } from '@/helpers/cat';
+import { twMerge } from 'tailwind-merge';
 
 type ResulePageProps = {
   params: {
@@ -29,7 +30,7 @@ const ResultPage = ({ params: { key } }: ResulePageProps) => {
 
   return (
     <div className="bg-result min-h-screen">
-      <div className="mx-auto max-w-lg px-4 py-4">
+      <div className="mx-auto max-w-md px-4 py-4">
         <div>
           <div className="-mx-2 my-4 flex items-end">
             <div className="w-5/12 px-2">
@@ -72,7 +73,7 @@ const ResultPage = ({ params: { key } }: ResulePageProps) => {
               <ResultInfo title="ขนาด">
                 {animal.weight.male ? (
                   <>
-                    <table className="text-[9px] text-left">
+                    <table className="mx-auto text-[10px] text-left whitespace-nowrap">
                       <tbody>
                         <tr>
                           <td className="px-1 text-left font-bold">เพศผู้:</td>
@@ -109,10 +110,10 @@ const ResultPage = ({ params: { key } }: ResulePageProps) => {
                   <>
                     <p className="font-bold text-xs">{animal.size}</p>
                     <p className="text-xs">
-                      น้ำหนัก {animal.weight.min} - {animal.weight.max} กก.
+                      น้ำหนัก {animal.weight.min}-{animal.weight.max} กก.
                     </p>
                     <p className="text-xs">
-                      ส่วนสูง {animal.height.min} - {animal.height.max} ซม.
+                      ส่วนสูง {animal.height.min}-{animal.height.max} ซม.
                     </p>
                   </>
                 )}
@@ -131,7 +132,7 @@ const ResultPage = ({ params: { key } }: ResulePageProps) => {
           <div className="my-4 -mx-1 flex items-stretch">
             <div className="px-1 w-1/2">
               <ResultInfo title="สิ่งที่น้องต้องการ">
-                <ul className="px-2 text-left text-sm">
+                <ul className={twMerge("px-2 text-sm", animal.wanting.length > 1 ? 'text-left' : 'text-center')}>
                   {animal.wanting.map((want) => (
                     <li key={want}>
                       {animal.wanting.length > 1 && '•'} {want}

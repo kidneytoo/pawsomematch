@@ -36,24 +36,24 @@ const SceneDog6 = ({ toNextScene }: SceneDog6Props) => {
       <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent bg-opacity-50 z-10" />
       <FadeIn>
         <div
-          className="absolute inset-x-0 bottom-48 z-20 px-16"
+          className="absolute inset-x-0 bottom-24 z-20 px-16"
           onClick={() => setCurrent(current + 1)}
         >
           {current < 3 && (
-            <div className="mt-auto text-white text-center text-2xl flex flex-col items-center">
+            <div className="mt-auto text-white text-center text-3xl flex flex-col items-center">
               {current === 1 ? (
                 <>
-                  <p className="my-2">คุณเห็นน้องหมามากมาย</p>
-                  <p className="my-2">ที่พร้อมจะเล่นกับคุณ</p>
+                  <p className="my-1">คุณเห็นน้องหมามากมาย</p>
+                  <p className="my-1">ที่พร้อมจะเล่นกับคุณ</p>
                 </>
               ) : (
                 <>
-                  <p className="my-2">คุณเดินเข้าไปหาน้องหมา</p>
-                  <p className="my-2">ที่คุณชอบตัวหนึ่ง</p>
+                  <p className="my-1">คุณเดินเข้าไปหาน้องหมา</p>
+                  <p className="my-1">ที่คุณชอบตัวหนึ่ง</p>
                 </>
               )}
               <Image
-                className="mt-4"
+                className="mt-6"
                 src="/images/icons/right-arrow.svg"
                 alt="Right Arrow"
                 width={30}
@@ -62,18 +62,18 @@ const SceneDog6 = ({ toNextScene }: SceneDog6Props) => {
             </div>
           )}
           {current === 3 && (
-            <div className="mt-auto text-white text-center text-2xl flex flex-col items-center">
-              <p className="my-2">มันเดินเข้ามาหาคุณ</p>
-              <p className="my-2">คุณจึงลูบหัวลูบตัวมัน</p>
-              <p className="my-2">คุณรู้สึกถึง ...</p>
+            <div className="mt-auto text-white text-center text-3xl flex flex-col items-center">
+              <p className="my-1">มันเดินเข้ามาหาคุณ</p>
+              <p className="my-1">คุณจึงลูบหัวลูบตัวมัน</p>
+              <p className="mb-4">คุณรู้สึกถึง ...</p>
               <button
-                className="my-2 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
+                className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
                 onClick={() => handleSelect(LONG_HAIR_DOGS, 'long')}
               >
                 ขนนุ่มยาวสลวย
               </button>
               <button
-                className="my-2 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
+                className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
                 onClick={() => handleSelect(SHORT_HAIR_DOGS, 'short')}
               >
                 ขนสั้นเนียนนุ่ม
