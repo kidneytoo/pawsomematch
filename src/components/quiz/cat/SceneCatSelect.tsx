@@ -10,6 +10,7 @@ import {
 } from '@/constants/dog';
 import { useState } from 'react';
 import { FRIENDLY_CATS, NEUTRAL_CATS } from '@/constants/cat';
+import LoopBG from '../LoopBG/LoopBG';
 
 type SceneDog5Props = {
   toNextScene: () => void;
@@ -29,24 +30,22 @@ const SceneCatSelect = ({ toNextScene }: SceneDog5Props) => {
       className="mx-auto w-full max-w-lg min-h-screen relative"
       onClick={() => current < 3 && setCurrent(current + 1)}
     >
-      <Image
-        className="object-cover"
-        src={
-          current < 3
-            ? '/images/quiz/bg-staff-cat.webp'
-            : '/images/quiz/scene3/loop4.webp'
-        }
-        alt="Home BG"
-        fill
-      />
+      {current < 3 ? (
+        <Image
+          className="object-cover"
+          src="/images/quiz/bg-staff-cat.webp"
+          alt="Home BG"
+          fill
+        />
+      ) : (
+        <LoopBG />
+      )}
       {current < 3 && (
         <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent bg-opacity-50 z-10" />
       )}
       <FadeIn>
         {current < 3 && (
-          <div
-            className="absolute inset-x-0 bottom-24 z-20 px-16"
-          >
+          <div className="absolute inset-x-0 bottom-24 z-20 px-16">
             <div className="mt-auto text-white text-center text-3xl flex flex-col items-center">
               {current === 1 ? (
                 <>

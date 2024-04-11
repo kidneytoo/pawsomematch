@@ -11,6 +11,7 @@ import {
   TIME_DOGS,
 } from '@/constants/dog';
 import { useEffect, useState } from 'react';
+import LoopBG from '../LoopBG/LoopBG';
 
 type SceneDogConfidentProps = {
   toNextScene: () => void;
@@ -41,12 +42,7 @@ const SceneDogConfident = ({ toNextScene }: SceneDogConfidentProps) => {
       className="mx-auto w-full max-w-lg min-h-screen relative"
       onClick={() => current === 2 && setCurrent(current + 1)}
     >
-      <Image
-        className="object-cover"
-        src="/images/quiz/scene3/loop4.webp"
-        alt="Home BG"
-        fill
-      />
+      <LoopBG />
       <div className="absolute inset-0 bg-white bg-opacity-20 z-10" />
       <FadeIn>
         <div className="absolute inset-x-0 bottom-1/2 translate-y-1/2 z-20">

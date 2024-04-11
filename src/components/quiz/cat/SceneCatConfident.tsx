@@ -5,6 +5,7 @@ import FadeIn from '../../animation/FadeIn';
 import { useResultAtom } from '@/stores/result/useAtom';
 import { useEffect, useState } from 'react';
 import { CAT_POOLS } from '@/constants/cat';
+import LoopBG from '../LoopBG/LoopBG';
 
 type SceneDogConfidentProps = {
   toNextScene: () => void;
@@ -32,12 +33,7 @@ const SceneDogConfident = ({ toNextScene }: SceneDogConfidentProps) => {
 
   return (
     <div className="mx-auto w-full max-w-lg min-h-screen relative">
-      <Image
-        className="object-cover"
-        src="/images/quiz/scene3/loop4.webp"
-        alt="Home BG"
-        fill
-      />
+      <LoopBG />
       <div className="absolute inset-0 bg-white bg-opacity-20 z-10" />
       <FadeIn>
         <div

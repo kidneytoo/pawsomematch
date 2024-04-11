@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import FadeIn from '../../animation/FadeIn';
 import { useSecond } from '@/hooks/useSecond';
+import LoopBG from '../LoopBG/LoopBG';
 
 type Scene2Props = {
   toNextScene: () => void;
@@ -14,23 +15,12 @@ const Scene3 = ({ toNextScene }: Scene2Props) => {
     }
   }
 
-  const getBGLoop = () => {
-    const loops: Record<number, string> = {
-      0: '/images/quiz/scene3/loop1.webp',
-      1: '/images/quiz/scene3/loop2.webp',
-      2: '/images/quiz/scene3/loop3.webp',
-      3: '/images/quiz/scene3/loop4.webp',
-      4: '/images/quiz/scene3/loop5.webp',
-    };
-
-    return loops[second % 5];
-  };
   return (
     <div
       className="mx-auto w-full max-w-lg min-h-screen relative"
       onClick={() => delayToNextScene()}
     >
-      <Image className="object-cover" src={getBGLoop()} alt="Loop BG" fill />
+      <LoopBG />
       <div className="absolute inset-x-0 top-24 z-20">
         <div className="px-8 w-full flex flex-col items-center">
           <Image
