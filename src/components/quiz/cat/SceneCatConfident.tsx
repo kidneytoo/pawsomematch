@@ -89,13 +89,13 @@ const SceneDogConfident = ({ toNextScene }: SceneDogConfidentProps) => {
                 </button>
                 <button
                   className="my-1 w-full bg-brown-text rounded-2xl px-6 py-2 text-white text-2xl"
-                  onClick={() => handleScore([], 'ready')}
+                  onClick={() => handleScore(['scottishFold', 'maine'], 'ready')}
                 >
                   แม้ว่าจะดื้อบ้าง แต่ก็<br />พร้อมจะเรียนรู้เขา
                 </button>
                 <button
                   className="my-1 w-full bg-brown-text rounded-2xl px-6 py-2 text-white text-2xl"
-                  onClick={() => handleScore([], 'time-aware')}
+                  onClick={() => handleScore(['russianBlue', 'bali'], 'time-aware')}
                 >
                   สิ่งที่กลัวคือไม่มีเวลา<br />ให้เขานี่แหละ
                 </button>
