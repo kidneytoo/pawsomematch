@@ -1,7 +1,5 @@
 import Image from 'next/image';
 
-import FadeIn from '../../animation/FadeIn';
-
 import { useResultAtom } from '@/stores/result/useAtom';
 import { APARTMENT_DOGS, DOG_POOLS } from '@/constants/dog';
 import { CAT_POOLS } from '@/constants/cat';
@@ -26,7 +24,7 @@ const SceneCatPlace = ({ toNextScene }: SceneDog2Props) => {
         fill
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent bg-opacity-50 z-10" />
-      <FadeIn>
+      <>
         <div className="absolute inset-x-0 bottom-64 z-20">
           <div className="mt-auto text-white text-center text-2xl flex flex-col items-center">
             <p className="my-1">คุณวางโทรศัพท์ลง</p>
@@ -34,8 +32,8 @@ const SceneCatPlace = ({ toNextScene }: SceneDog2Props) => {
             <p className="my-1">คุณพบว่าตัวเองอยู่ใน</p>
           </div>
         </div>
-      </FadeIn>
-      <FadeIn>
+      </>
+      <>
         <div className="absolute inset-x-0 bottom-28 z-20 flex flex-col items-center px-8">
           <button
             className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-xl"
@@ -48,7 +46,7 @@ const SceneCatPlace = ({ toNextScene }: SceneDog2Props) => {
             บ้านของตัวเอง
           </button>
         </div>
-      </FadeIn>
+      </>
     </div>
   );
 };

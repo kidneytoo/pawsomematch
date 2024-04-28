@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import FadeIn from '../../animation/FadeIn';
 
 import { useResultAtom } from '@/stores/result/useAtom';
 import { DOG_POOLS, LARGE_DOGS, MEDIUM_DOGS, SMALL_DOGS } from '@/constants/dog';
@@ -25,7 +24,7 @@ const SceneDog4 = ({ toNextScene }: SceneDog4Props) => {
         fill
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent bg-opacity-50 z-10" />
-      <FadeIn>
+      <>
         <div
           className="absolute inset-x-0 bottom-24 z-20 px-16"
         >
@@ -48,7 +47,7 @@ const SceneDog4 = ({ toNextScene }: SceneDog4Props) => {
           </button>
           </div>
         </div>
-      </FadeIn>
+      </>
     </div>
   );
 };

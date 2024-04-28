@@ -1,7 +1,5 @@
 import Image from 'next/image';
 
-import FadeIn from '../../animation/FadeIn';
-
 import { useResultAtom } from '@/stores/result/useAtom';
 import { useEffect, useState } from 'react';
 import { redirect } from 'next/navigation';
@@ -37,7 +35,7 @@ const SceneCatResult = ({ toNextScene }: SceneDogResultProps) => {
       {current === 2 && (
         <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent bg-opacity-50 z-10" />
       )}
-      <FadeIn>
+      <>
         {current === 1 && (
           <div className="absolute inset-x-0 bottom-1/2 translate-y-1/2 z-20">
             <div className="mt-auto text-white text-center text-2xl flex flex-col items-center">
@@ -61,7 +59,7 @@ const SceneCatResult = ({ toNextScene }: SceneDogResultProps) => {
               </div>
             </div>
           </div>
-      </FadeIn>
+      </>
     </div>
   );
 };

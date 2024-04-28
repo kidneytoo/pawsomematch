@@ -1,7 +1,5 @@
 import Image from 'next/image';
 
-import FadeIn from '../../animation/FadeIn';
-
 import { useResultAtom } from '@/stores/result/useAtom';
 import { APARTMENT_DOGS, DOG_POOLS } from '@/constants/dog';
 import { useEffect, useState } from 'react';
@@ -26,7 +24,7 @@ const SceneCatGo = ({ toNextScene }: SceneDog3Props) => {
     >
       <LoopBG />
       <div className="absolute inset-0 bg-white bg-opacity-20 z-10" />
-      <FadeIn>
+      <>
         <div className="absolute inset-x-0 bottom-1/2 translate-y-1/2 z-20">
           <div className="mt-auto text-brown-bg text-center text-2xl flex flex-col items-center">
             {current === 1 && (
@@ -49,7 +47,7 @@ const SceneCatGo = ({ toNextScene }: SceneDog3Props) => {
         <div className="absolute inset-x-0 bottom-24 translate-y-1/2 z-30 flex justify-center">
           <NextButton onClick={() => setCurrent(current + 1)} />
         </div>
-      </FadeIn>
+      </>
     </div>
   );
 };

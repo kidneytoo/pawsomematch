@@ -1,7 +1,5 @@
 import Image from 'next/image';
 
-import FadeIn from '../../animation/FadeIn';
-
 import { useResultAtom } from '@/stores/result/useAtom';
 import { ANNOYED_DOGS, DOG_POOLS, TIME_DOGS } from '@/constants/dog';
 import { useEffect, useState } from 'react';
@@ -40,7 +38,7 @@ const SceneDogResult = ({ toNextScene }: SceneDogResultProps) => {
         <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent bg-opacity-50 z-10" />
       )}
       {current === 1 && (
-        <FadeIn>
+        <>
           <div className="absolute inset-x-0 bottom-1/2 translate-y-1/2 z-20">
             <div className="mt-auto text-white text-center text-2xl flex flex-col items-center">
               <>
@@ -49,9 +47,9 @@ const SceneDogResult = ({ toNextScene }: SceneDogResultProps) => {
               </>
             </div>
           </div>
-        </FadeIn>
+        </>
       )}
-      <FadeIn>
+      <>
         <div className="absolute inset-x-0 bottom-24 z-30 px-8 flex flex-col items-center">
           {current === 2 && (
             <div className="mt-auto text-white text-center text-2xl flex flex-col items-center">
@@ -66,7 +64,7 @@ const SceneDogResult = ({ toNextScene }: SceneDogResultProps) => {
             <NextButton onClick={() => setCurrent(current + 1)} />
           </div>
         </div>
-      </FadeIn>
+      </>
     </div>
   );
 };

@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import FadeIn from '../../animation/FadeIn';
 
 import { useResultAtom } from '@/stores/result/useAtom';
 import {
@@ -39,7 +38,7 @@ const SceneDog6 = ({ toNextScene }: SceneDog6Props) => {
         fill
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent bg-opacity-50 z-10" />
-      <FadeIn>
+      <>
         <div className="absolute inset-x-0 bottom-24 z-20 px-16">
           {current < 3 && (
             <div className="mt-auto text-white text-center text-2xl flex flex-col items-center">
@@ -81,7 +80,7 @@ const SceneDog6 = ({ toNextScene }: SceneDog6Props) => {
             </div>
           )}
         </div>
-      </FadeIn>
+      </>
     </div>
   );
 };

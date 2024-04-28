@@ -1,7 +1,5 @@
 import Image from 'next/image';
 
-import FadeIn from '../../animation/FadeIn';
-
 import { useResultAtom } from '@/stores/result/useAtom';
 import { useEffect, useState } from 'react';
 import { CAT_DESCRIPTIONS } from '@/constants/cat';
@@ -39,7 +37,7 @@ const SceneCatHabit = ({ toNextScene }: SceneCatHabitProps) => {
     >
       <LoopBG />
       <div className="absolute inset-0 bg-white bg-opacity-20 z-10" />
-      <FadeIn>
+      <>
         <div className="absolute inset-x-0 bottom-1/2 translate-y-1/2 z-20">
           <div className="mt-auto text-brown-bg text-center text-2xl flex flex-col items-center">
             {current <= 2 && (
@@ -92,7 +90,7 @@ const SceneCatHabit = ({ toNextScene }: SceneCatHabitProps) => {
             </div>
           )}
         </div>
-      </FadeIn>
+      </>
     </div>
   );
 };
