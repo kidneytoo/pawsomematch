@@ -6,6 +6,7 @@ import { useResultAtom } from '@/stores/result/useAtom';
 import { APARTMENT_DOGS, DOG_POOLS } from '@/constants/dog';
 import { useEffect, useState } from 'react';
 import LoopBG from '../LoopBG/LoopBG';
+import NextButton from '@/components/common/NextButton/NextButton';
 
 type SceneDog3Props = {
   toNextScene: () => void;
@@ -22,13 +23,12 @@ const SceneCatGo = ({ toNextScene }: SceneDog3Props) => {
   return (
     <div
       className="mx-auto w-full max-w-lg min-h-screen relative"
-      onClick={() => setCurrent(current + 1)}
     >
       <LoopBG />
       <div className="absolute inset-0 bg-white bg-opacity-20 z-10" />
       <FadeIn>
         <div className="absolute inset-x-0 bottom-1/2 translate-y-1/2 z-20">
-          <div className="mt-auto text-brown-bg text-center text-3xl flex flex-col items-center">
+          <div className="mt-auto text-brown-bg text-center text-2xl flex flex-col items-center">
             {current === 1 && (
               <p className="mb-12">คุณเตรียมตัวออกไปเจอเพื่อน</p>
             )}
@@ -44,14 +44,10 @@ const SceneCatGo = ({ toNextScene }: SceneDog3Props) => {
                 <p className="mb-12">พนักงานถามว่า</p>
               </>
             )}
-            <Image
-              className="mt-4"
-              src="/images/icons/right-arrow-black.svg"
-              alt="Right Arrow"
-              width={30}
-              height={15}
-            />
           </div>
+        </div>
+        <div className="absolute inset-x-0 bottom-24 translate-y-1/2 z-30 flex justify-center">
+          <NextButton onClick={() => setCurrent(current + 1)} />
         </div>
       </FadeIn>
     </div>

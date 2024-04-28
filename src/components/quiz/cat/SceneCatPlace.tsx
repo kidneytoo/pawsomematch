@@ -28,7 +28,7 @@ const SceneCatPlace = ({ toNextScene }: SceneDog2Props) => {
       <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent bg-opacity-50 z-10" />
       <FadeIn>
         <div className="absolute inset-x-0 bottom-64 z-20">
-          <div className="mt-auto text-white text-center text-3xl flex flex-col items-center">
+          <div className="mt-auto text-white text-center text-2xl flex flex-col items-center">
             <p className="my-1">คุณวางโทรศัพท์ลง</p>
             <p className="my-1">ลุกจากเตียงและมองไปรอบ ๆ</p>
             <p className="my-1">คุณพบว่าตัวเองอยู่ใน</p>
@@ -36,14 +36,14 @@ const SceneCatPlace = ({ toNextScene }: SceneDog2Props) => {
         </div>
       </FadeIn>
       <FadeIn>
-        <div className="absolute inset-x-0 bottom-28 z-20 flex flex-col items-center px-16">
+        <div className="absolute inset-x-0 bottom-28 z-20 flex flex-col items-center px-8">
           <button
-            className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
+            className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-xl"
             onClick={() => handleSelect(CAT_POOLS, 'apartment')}>
             อพาร์ตเมนต์ของตัวเอง
           </button>
           <button
-            className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
+            className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-xl"
             onClick={() => handleSelect(CAT_POOLS, 'home')}>
             บ้านของตัวเอง
           </button>

@@ -21,12 +21,12 @@ const SceneCatStaff = ({ toNextScene }: SceneDog4Props) => {
       <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent bg-opacity-50 z-10" />
       <FadeIn>
         <div
-          className="absolute inset-x-0 bottom-24 z-20 px-16"
+          className="absolute inset-x-0 bottom-24 z-20 px-8"
         >
-          <div className="mt-auto text-white text-center text-3xl flex flex-col items-center">
+          <div className="mt-auto text-white text-center text-2xl flex flex-col items-center">
             <p className="mb-8">สนใจไปเจอน้องแมวเลยมั้ยคะ</p>
             <button
-            className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
+            className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-xl"
             onClick={() => handleSelect()}>
             ไปหาน้องแมวกันเลย!
           </button>
