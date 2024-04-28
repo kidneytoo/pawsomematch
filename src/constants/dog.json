@@ -112,7 +112,8 @@
     "habits": ["Outgoing", "Intelligent", "Friendly"],
     "image": {
       "sketch": "/images/sketch/dog/labrador.webp",
-      "real": "/images/real/dog/labrador.webp"
+      "real": "/images/real/dog/labrador.webp",
+      "result": "/images/result/dog/labrador.jpg"
     },
     "details": ["ฉลาด ฝึกง่าย", "ร่าเริง เป็นมิตร", "รักเด็ก เข้ากับสัตว์อื่นได้ดี", "ชอบเล่นน้ำ ออกกำลังกาย", "กินจุ ต้องควบคุมอาหาร"],
     "tip": "ขนสั้น หนา 2 ชั้น ผลัดขนปีละ 2 ครั้ง เห่าค่อนข้างบ่อย ต้องการการฝึก ชอบกัดแทะสิ่งของ ต้องการของเล่น ต้องการพื้นที่ในการวิ่งเล่น อายุขัยเฉลี่ย 10-12 ปี",
