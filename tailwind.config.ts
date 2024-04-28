@@ -30,8 +30,13 @@ const config: Config = {
       padding: {
         '4/3': '133.33%',
         '9/16': '56.25%',
+        '4/5': '80%',
         full: '100%',
       },
+      objectPosition: {
+        'center-bottom': 'center bottom',
+        home: '50% 80%',
+      }
     },
   },
   plugins: [],
