@@ -29,20 +29,20 @@ const SceneDog4 = ({ toNextScene }: SceneDog4Props) => {
         <div
           className="absolute inset-x-0 bottom-24 z-20 px-16"
         >
-          <div className="mt-auto text-white text-center text-3xl flex flex-col items-center">
-            <p className="my-2">วันนี้สนใจไปโซนไหนดีคะ</p>
+          <div className="mt-auto text-white text-center text-2xl flex flex-col items-center">
+            <p className="my-4">วันนี้สนใจไปโซนไหนดีคะ</p>
             <button
-            className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
+            className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-xl"
             onClick={() => handleSelect(SMALL_DOGS, 'small')}>
             โซนน้องหมาพันธุ์เล็ก
           </button>
           <button
-            className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
+            className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-xl"
             onClick={() => handleSelect(MEDIUM_DOGS, 'medium')}>
             โซนน้องหมาพันธุ์กลาง
           </button>
           <button
-            className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
+            className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-xl"
             onClick={() => handleSelect([...MEDIUM_DOGS, ...LARGE_DOGS], 'large')}>
             โซนน้องหมาพันธุ์ใหญ่
           </button>

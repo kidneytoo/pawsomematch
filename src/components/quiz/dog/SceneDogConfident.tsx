@@ -46,21 +46,29 @@ const SceneDogConfident = ({ toNextScene }: SceneDogConfidentProps) => {
       <div className="absolute inset-0 bg-white bg-opacity-20 z-10" />
       <FadeIn>
         <div className="absolute inset-x-0 bottom-1/2 translate-y-1/2 z-20">
-          <div className="mt-auto text-brown-bg text-center text-3xl flex flex-col items-center">
+          <div className="mt-auto text-brown-bg text-center text-2xl flex flex-col items-center">
             {current === 1 && (
               <>
                 <p>แล้วได้คิดบ้างหรือเปล่า</p>
                 <p className="mb-4">ว่าเราต้องรับถึงข้อเสียเขาด้วย</p>
               </>
             )}
-            {current >= 2 && (
+            {current === 2 && (
               <>
                 <p>ถ้าได้เลี้ยงเขา มั่นใจหรือเปล่า</p>
                 <p>ว่าเราจะให้เวลาเขา ดูแลเขา</p>
                 <p className="mb-4">ถึงแม้ว่าเขาจะดื้อบ้าง ซนบ้าง</p>
               </>
             )}
-            {current === 2 && (
+            {current === 3 && (
+              <>
+                <p>คุณมั่นใจหรือเปล่านะ</p>
+              </>
+            )}
+          </div>
+        </div>
+        <div className="absolute inset-x-0 bottom-24 z-30 px-8 flex justify-center">
+        {current === 2 && (
               <Image
                 className="mt-8"
                 src="/images/icons/right-arrow-black.svg"
@@ -70,15 +78,15 @@ const SceneDogConfident = ({ toNextScene }: SceneDogConfidentProps) => {
               />
             )}
             {current === 1 && (
-              <div className="px-12">
+              <div>
                 <button
-                  className="my-1 w-full bg-brown-text rounded-2xl px-6 py-2 text-white text-2xl"
+                  className="my-1 w-full bg-brown-text rounded-2xl px-6 py-2 text-white text-xl"
                   onClick={() => answer('always-know')}
                 >
                   รู้สิ
                 </button>
                 <button
-                  className="my-1 w-full bg-brown-text rounded-2xl px-6 py-2 text-white text-2xl"
+                  className="my-1 w-full bg-brown-text rounded-2xl px-6 py-2 text-white text-xl"
                   onClick={() => answer('never-think')}
                 >
                   ไม่เคยคิดเลย
@@ -86,9 +94,9 @@ const SceneDogConfident = ({ toNextScene }: SceneDogConfidentProps) => {
               </div>
             )}
             {current === 3 && (
-              <div className="px-12">
+              <div>
                 <button
-                  className="my-1 w-full bg-brown-text rounded-2xl px-6 py-2 text-white text-2xl"
+                  className="my-1 w-full bg-brown-text rounded-2xl px-6 py-2 text-white text-xl"
                   onClick={() => handleScore(DOG_POOLS, 'confident')}
                 >
                   มั่นใจสิ...จะมอบให้
@@ -96,7 +104,7 @@ const SceneDogConfident = ({ toNextScene }: SceneDogConfidentProps) => {
                   ทั้งเวลาและความรักเลย
                 </button>
                 <button
-                  className="my-1 w-full bg-brown-text rounded-2xl px-6 py-2 text-white text-2xl"
+                  className="my-1 w-full bg-brown-text rounded-2xl px-6 py-2 text-white text-xl"
                   onClick={() => handleScore(ANNOYED_DOGS, 'ready')}
                 >
                   แม้ว่าจะดื้อบ้าง แต่ก็
@@ -104,7 +112,7 @@ const SceneDogConfident = ({ toNextScene }: SceneDogConfidentProps) => {
                   พร้อมจะฝึกและเรียนรู้เขา
                 </button>
                 <button
-                  className="my-1 w-full bg-brown-text rounded-2xl px-6 py-2 text-white text-2xl"
+                  className="my-1 w-full bg-brown-text rounded-2xl px-6 py-2 text-white text-xl"
                   onClick={() => handleScore(TIME_DOGS, 'time-aware')}
                 >
                   สิ่งที่กลัวคือไม่มีเวลา
@@ -113,7 +121,6 @@ const SceneDogConfident = ({ toNextScene }: SceneDogConfidentProps) => {
                 </button>
               </div>
             )}
-          </div>
         </div>
       </FadeIn>
     </div>

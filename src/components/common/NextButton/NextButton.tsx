@@ -8,11 +8,11 @@ type NextButtonProps = {
 const NextButton = ({ type = 'button', onClick, href }: NextButtonProps) => {
   if (type === 'link') {
     return (
-      <Link href={href ?? ''} className="rounded-xl px-6 py-1.5 bg-white text-brown-text text-lg shadow-md">ถัดไป</Link>
+      <Link href={href ?? ''} className="rounded-2xl px-6 py-1.5 bg-white text-brown-text text-2xl shadow-md">ถัดไป</Link>
     )
   }
   return (
-    <button onClick={onClick} className="rounded-xl px-6 py-1.5 bg-white text-brown-text text-lg shadow-md">ถัดไป</button>
+    <button onClick={onClick} className="rounded-2xl px-6 py-1.5 bg-white text-brown-text text-2xl shadow-md">ถัดไป</button>
   )
 };
 

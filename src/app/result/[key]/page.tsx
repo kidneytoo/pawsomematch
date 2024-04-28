@@ -74,7 +74,7 @@ const ResultPage = ({ params: { key } }: ResulePageProps) => {
               <ResultInfo title="ขนาด">
                 {animal.weight.male ? (
                   <>
-                    <table className="mx-auto text-[10px] text-left whitespace-nowrap">
+                    <table className="mx-auto text-[8px] text-left whitespace-nowrap">
                       <tbody>
                         <tr>
                           <td className="px-1 text-left font-bold">เพศผู้:</td>

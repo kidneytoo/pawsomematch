@@ -9,6 +9,7 @@ import {
   SMALL_DOGS,
 } from '@/constants/dog';
 import { useState } from 'react';
+import NextButton from '@/components/common/NextButton/NextButton';
 
 type SceneDog5Props = {
   toNextScene: () => void;
@@ -35,7 +36,6 @@ const SceneDog5 = ({ toNextScene }: SceneDog5Props) => {
   return (
     <div
       className="mx-auto w-full max-w-lg min-h-screen relative"
-      onClick={() => current < 3 && setCurrent(current + 1)}
     >
       <Image
         className="object-cover"
@@ -45,9 +45,9 @@ const SceneDog5 = ({ toNextScene }: SceneDog5Props) => {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent bg-opacity-50 z-10" />
       <FadeIn>
-        <div className="absolute inset-x-0 bottom-24 z-20 px-16">
+        <div className="absolute inset-x-0 bottom-24 z-20 px-8">
           {current < 3 && (
-            <div className="mt-auto text-white text-center text-3xl flex flex-col items-center">
+            <div className="mt-auto text-white text-center text-2xl flex flex-col items-center">
               {current === 1 ? (
                 <>
                   <p className="my-1">พนักงานพาคุณและเพื่อน</p>
@@ -59,34 +59,30 @@ const SceneDog5 = ({ toNextScene }: SceneDog5Props) => {
                   <p className="my-1">เสียงหมาเห่าดังขึ้นเรื่อย ๆ</p>
                 </>
               )}
-              <Image
-                className="mt-8"
-                src="/images/icons/right-arrow.svg"
-                alt="Right Arrow"
-                width={30}
-                height={15}
-              />
+              <div className="mt-8">
+                <NextButton onClick={() => current < 3 && setCurrent(current + 1)} />
+              </div>
             </div>
           )}
           {current === 3 && (
-            <div className="mt-auto text-white text-center text-3xl flex flex-col items-center">
+            <div className="mt-auto text-white text-center text-2xl flex flex-col items-center">
               <p className="my-1">ระหว่างเดินไปคุณได้ยิน</p>
               <p className="my-1">เสียงหมาเห่าดังขึ้นเรื่อย ๆ</p>
               <p className="mb-6">คุณรู้สึกอย่างไร</p>
               <button
-                className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
+                className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-xl"
                 onClick={() => handleSelect('annoy')}
               >
                 รำคาญเสียงหมาเห่า
               </button>
               <button
-                className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
+                className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-xl"
                 onClick={() => handleSelect('neutral')}
               >
                 เฉย ๆ ธรรมชาติของหมา
               </button>
               <button
-                className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-2xl"
+                className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-xl"
                 onClick={() => handleSelect('excited')}
               >
                 ตื่นเต้นที่จะได้พบน้องหมา
