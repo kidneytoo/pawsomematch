@@ -52,10 +52,12 @@ const Scene3 = ({ toNextScene }: Scene2Props) => {
                 <p className="absolute top-4 right-4">ตอนนี้</p>
               </div>
             )}
-            {second >= 4 && (
+            {second >= 4 ? (
               <div className="mt-8 text-center text-2xl flex flex-col items-center">
                 <p className="text-xl">กดเพื่ออ่านข้อความ</p>
               </div>
+            ) : (
+              <div className="mt-8"><br /></div>
             )}
           </div>
     </div>

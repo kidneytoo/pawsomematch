@@ -33,7 +33,7 @@ export default function Home() {
             </div>
           </div>
           <div className="my-4">
-            <NextButton type="link" href="/quiz" />
+            <NextButton type="link" href="/pre-intro" />
           </div>
         </div>
         <div className="mt-8 py-4 flex justify-center">
