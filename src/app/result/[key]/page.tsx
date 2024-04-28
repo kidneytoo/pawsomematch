@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
+import { twMerge } from 'tailwind-merge';
 
 import ResultImage from '@/components/result/ResultImage/ResultImage';
 import ResultInfo from '@/components/result/ResultInfo/ResultInfo';
-import { getDog } from '@/helpers/dog';
 import { getCat } from '@/helpers/cat';
-import { twMerge } from 'tailwind-merge';
+import { getDog } from '@/helpers/dog';
+import SaveButton from '@/components/result/SaveButton/SaveButton';
 
 type ResulePageProps = {
   params: {
@@ -37,20 +38,20 @@ const ResultPage = ({ params: { key } }: ResulePageProps) => {
               <ResultImage image={animal.image} name={animal.name} />
             </div>
             <div className="w-7/12 px-2 text-center text-brown-text">
-              <p className="font-bold text-lg">คุณเหมาะกับน้อง{type === 'dog' ? 'หมา' : 'แมว'}พันธุ์</p>
-              <p className="font-bold text-3xl">{animal.name}</p>
+              <p>คุณเหมาะกับน้อง{type === 'dog' ? 'หมา' : 'แมว'}พันธุ์</p>
+              <p className="font-bold text-2xl">{animal.name}</p>
               <div className="-mx-1 my-2 flex items-center justify-center">
                 {animal.habits.map((habit) => (
                   <div
                     key={habit.toLowerCase()}
                     className="mx-1 px-2 py-1 rounded-full bg-brown-bg"
                   >
-                    <p className="text-white text-xs font-bold">{habit}</p>
+                    <p className="text-white text-[10px]">{habit}</p>
                   </div>
                 ))}
               </div>
               <div className="px-4 py-2 w-full bg-[#9B776B] rounded-xl text-white">
-                <ul className="text-left text-sm font-bold">
+                <ul className="text-left text-sm">
                   {animal.details.map((detail) => (
                     <li key={detail}>• {detail}</li>
                   ))}
@@ -60,7 +61,7 @@ const ResultPage = ({ params: { key } }: ResulePageProps) => {
           </div>
           <div className="my-4">
             <ResultInfo title="ข้อควรรู้">
-              <p>{animal.tip}</p>
+              <p className="px-2 text-sm">{animal.tip}</p>
             </ResultInfo>
           </div>
           <div className="my-4 -mx-1 flex items-stretch">
@@ -121,11 +122,11 @@ const ResultPage = ({ params: { key } }: ResulePageProps) => {
             </div>
             <div className="px-1 w-1/3">
               <ResultInfo title="ค่าใช้จ่าย">
-                <p className="font-bold text-lg">
+                <p className="font-bold">
                   {animal.cost.min.toLocaleString()} -{' '}
                   {animal.cost.max.toLocaleString()}
                 </p>
-                <p>บาท/เดือน</p>
+                <p className="text-sm">บาท/เดือน</p>
               </ResultInfo>
             </div>
           </div>
@@ -152,8 +153,9 @@ const ResultPage = ({ params: { key } }: ResulePageProps) => {
             </div>
           </div>
         </div>
-        <div className="my-8 flex flex-col items-center">
-          <Link href="/" className="text-brown-text font-bold">
+        <div className="my-8 flex space-x-2 justify-center items-center">
+          <SaveButton url={animal.image.result} slug={key} />
+          <Link href="/" className="bg-white rounded-full px-6 py-1.5 text-brown-text text-sm">
             กลับสู่หน้าหลัก
           </Link>
         </div>

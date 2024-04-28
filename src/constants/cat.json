@@ -4,7 +4,8 @@
     "habits": ["Playful", "Affectionate", "Quiet"],
     "image": {
       "sketch": "/images/sketch/cat/scottish-fold.webp",
-      "real": "/images/real/cat/scottish-fold.webp"
+      "real": "/images/real/cat/scottish-fold.webp",
+      "result": "/images/result/cat/scottish-fold.jpg"
     },
     "details": [
       "เป็นแมวที่เรียบร้อย เงียบสงบ",
@@ -43,7 +44,8 @@
     "habits": ["Playful", "Affectionate", "Intelligent"],
     "image": {
       "sketch": "/images/sketch/cat/bali.webp",
-      "real": "images/real/cat/bali.webp"
+      "real": "/images/real/cat/bali.webp",
+      "result": "/images/result/cat/bali.jpg"
     },
     "details": [
       "ร่าเริง กระตือรือร้น ชอบเล่น",
@@ -83,7 +85,8 @@
     "habits": ["Playful", "Affectionate", "Quite"],
     "image": {
       "sketch": "/images/sketch/cat/maine.webp",
-      "real": "/images/real/cat/maine.webp"
+      "real": "/images/real/cat/maine.webp",
+      "result": "/images/result/cat/maine.jpg"
     },
     "details": [
       "ฉลาด เฉลียวฉลาด",
@@ -124,7 +127,8 @@
     "habits": ["Gentle", "Affectionate", "Quiet"],
     "image": {
       "sketch": "/images/sketch/cat/persian.webp",
-      "real": "/images/real/cat/persian.webp"
+      "real": "/images/real/cat/persian.webp",
+      "result": "/images/result/cat/persian.jpg"
     },
     "details": [
       "ร่าเริง กระตือรือร้น ชอบเล่น",
@@ -165,7 +169,8 @@
     "habits": ["Active", "Intelligent", "Playful"],
     "image": {
       "sketch": "/images/sketch/cat/russian-blue.webp",
-      "real": "/images/real/cat/russian-blue.webp"
+      "real": "/images/real/cat/russian-blue.webp",
+      "result": "/images/result/cat/russian-blue.jpg"
     },
     "details": [
       "ฉลาด ชอบเล่น",
@@ -204,7 +209,8 @@
     "habits": ["Affectionate", "Intelligent", "Playful"],
     "image": {
       "sketch": "/images/sketch/cat/tiffanie.webp",
-      "real": "/images/real/cat/tiffanie.webp"
+      "real": "/images/real/cat/tiffanie.webp",
+      "result": "/images/result/cat/tiffanie.jpg"
     },
     "details": [
       "ฉลาด เชื่อฟังคำสั่งได้ดี",

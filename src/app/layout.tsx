@@ -1,7 +1,7 @@
 import type {Metadata} from "next"
 
 import "./globals.css"
-import {chulaCharas, chulalongkorn} from "@/styles/fonts/fonts"
+import {notoSans} from "@/styles/fonts/fonts"
 
 export const metadata: Metadata = {
   title: "Pawsome Match",
@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${chulaCharas.variable} ${chulalongkorn.variable} font-chulacharas`}>
+        className={`${notoSans.variable} font-noto-sans`}>
         {children}
       </body>
     </html>

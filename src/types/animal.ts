@@ -4,6 +4,7 @@ export type AnimalResult = {
   image: {
     sketch: string;
     real: string;
+    result: string;
   };
   details: string[];
   tip: string;

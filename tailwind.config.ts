@@ -24,7 +24,7 @@ const config: Config = {
         }
       },
       fontFamily: {
-        chulacharas: ["var(--font-chula-charas)"],
+        'noto-sans': ["var(--font-noto-sans)"],
         chulalongkorn: ["var(--font-chulalongkorn)"],
       },
       padding: {

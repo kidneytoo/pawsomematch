@@ -22,7 +22,7 @@ const ResultImage = ({ image, name }: ResultImageProps) => {
       >
         <Image className="object-cover" src={image.sketch} fill alt={name} />
         <div className="absolute bottom-1 inset-x-0 mx-0.5 flex justify-center">
-          <button className="bg-brown-bg text-white text-xs px-4 py-1 rounded-full font-bold">
+          <button className="bg-brown-bg text-white text-[10px] px-4 py-1 rounded-full">
             กดเพื่อดูรูปน้องตัวจริง
           </button>
         </div>

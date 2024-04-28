@@ -1,4 +1,5 @@
 import localFont from 'next/font/local';
+import { Noto_Sans_Thai_Looped } from 'next/font/google';
 
 export const chulaCharas = localFont({
   src: [
@@ -42,3 +43,8 @@ export const chulalongkorn = localFont({
   variable: '--font-chulalongkorn'
 });
 
+export const notoSans = Noto_Sans_Thai_Looped({
+  weight: ['500', '700'],
+  subsets: ['thai', 'latin'],
+  variable: '--font-noto-sans'
+})
