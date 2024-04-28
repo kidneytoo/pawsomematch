@@ -14,11 +14,11 @@ export default function Home() {
             <Image
               src="/images/logo.svg"
               alt="Paw Logo"
-              width={80}
-              height={122}
+              width={60}
+              height={91}
             />
           </div>
-          <div className="mt-6 rounded-2xl shadow-md w-[300px] h-[240px] overflow-hidden relative">
+          <div className="mt-6 rounded-2xl shadow-md w-[250px] h-[200px] overflow-hidden relative">
             <Image
               className="object-cover object-home"
               src="/images/home/bg-home-01.webp"
