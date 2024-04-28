@@ -1,4 +1,5 @@
 import type {Config} from "tailwindcss"
+import plugin from "tailwindcss/plugin";
 
 const config: Config = {
   content: [
@@ -8,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      animation: {
+				fade: 'fadeIn .5s ease-in-out',
+			},
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -27,6 +31,12 @@ const config: Config = {
         'noto-sans': ["var(--font-noto-sans)"],
         chulalongkorn: ["var(--font-chulalongkorn)"],
       },
+      keyframes: {
+				fadeIn: {
+					from: { opacity: '0' },
+					to: { opacity: '1' },
+				},
+			},
       padding: {
         '4/3': '133.33%',
         '9/16': '56.25%',
@@ -39,6 +49,21 @@ const config: Config = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(({ matchUtilities, theme }) => {
+      matchUtilities(
+        {
+          "animation-delay": (value) => {
+            return {
+              "animation-delay": value,
+            };
+          },
+        },
+        {
+          values: theme("transitionDelay"),
+        }
+      );
+    }),
+  ],
 }
 export default config

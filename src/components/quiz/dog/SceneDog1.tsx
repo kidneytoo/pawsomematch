@@ -42,20 +42,20 @@ const SceneDog1 = ({ toNextScene }: SceneDog1Props) => {
       </div>
       <div className="mt-8 mx-4">
         <div className="my-4 w-min rounded-2xl px-4 py-2 bg-white">
-          <p className="whitespace-nowrap text-3xl">ตื่นยังอะ</p>
+          <p className="whitespace-nowrap text-2xl">ตื่นยังอะ</p>
         </div>
         <div className="my-4 w-min rounded-2xl px-4 py-2 bg-white">
-          <p className="whitespace-nowrap text-3xl">เราตื่นละ</p>
+          <p className="whitespace-nowrap text-2xl">เราตื่นละ</p>
         </div>
         <div className="my-4 w-min rounded-2xl px-4 py-2 bg-white">
-          <p className="whitespace-nowrap text-3xl">สรุปจะไปคาเฟ่หมาหรือแมว</p>
+          <p className="whitespace-nowrap text-2xl">สรุปจะไปคาเฟ่หมาหรือแมว</p>
         </div>
         <div className="my-4 ml-auto w-min rounded-2xl px-4 py-2 bg-[#F2E5D1]">
-          <p className="whitespace-nowrap text-3xl">คาเฟ่หมา</p>
+          <p className="whitespace-nowrap text-2xl">คาเฟ่หมา</p>
         </div>
         {second >= 1 && (
           <div className="my-4 w-min rounded-2xl px-4 py-2 bg-white">
-          <p className="whitespace-nowrap text-3xl">ได้เลย เจอกันนะ</p>
+          <p className="whitespace-nowrap text-2xl">ได้เลย เจอกันนะ</p>
         </div>
         )}
       </div>

@@ -9,16 +9,16 @@ type Scene2Props = {
 const Scene3 = ({ toNextScene }: Scene2Props) => {
   const second = useSecond();
 
-  const delayToNextScene = () => {
-    if (second >= 4) {
-      toNextScene();
-    }
-  }
+  // const delayToNextScene = () => {
+  //   if (second >= 4) {
+  //     toNextScene();
+  //   }
+  // }
 
   return (
     <div
       className="mx-auto w-full max-w-lg min-h-screen relative"
-      onClick={() => delayToNextScene()}
+      onClick={() => toNextScene()}
     >
       <LoopBG />
       <div className="absolute inset-x-0 top-24 z-20">
@@ -30,31 +30,34 @@ const Scene3 = ({ toNextScene }: Scene2Props) => {
             width={32}
             height={32}
           />
-          <p className="text-brown-text-light text-9xl font-bold">07:00</p>
-          {second >= 2 && (
-            <div className="mt-4 w-full relative rounded-3xl px-4 py-4 flex items-center bg-white">
-              <Image
-                src="/images/icons/user.svg"
-                alt="Lock"
-                width={40}
-                height={40}
-              />
-              <div className="ml-4">
-                <p className="text-2xl font-bold">mymint</p>
-                <p className="text-2xl">1 ข้อความใหม่</p>
-              </div>
-              <p className="absolute top-4 right-4">ตอนนี้</p>
-            </div>
-          )}
+          <p className="text-brown-text-light text-8xl font-bold">07:00</p>
         </div>
       </div>
-      {second >= 4 && (
-          <div className="absolute left-1/2 -translate-x-1/2 bottom-48 z-20">
-            <div className="mt-auto text-center text-2xl flex flex-col items-center">
-              <p className="text-xl">กดเพื่ออ่านข้อความ</p>
-            </div>
+      <div
+            className="absolute inset-x-0 bottom-24 z-20 mx-4"
+            onClick={() => toNextScene()}
+          >
+            {second >= 2 && (
+              <div className="mt-4 w-full relative rounded-3xl px-4 py-4 flex items-center bg-white">
+                <Image
+                  src="/images/icons/user.svg"
+                  alt="Lock"
+                  width={40}
+                  height={40}
+                />
+                <div className="ml-4">
+                  <p className="text-2xl font-bold">mymint</p>
+                  <p className="text-2xl">1 ข้อความใหม่</p>
+                </div>
+                <p className="absolute top-4 right-4">ตอนนี้</p>
+              </div>
+            )}
+            {second >= 4 && (
+              <div className="mt-8 text-center text-2xl flex flex-col items-center">
+                <p className="text-xl">กดเพื่ออ่านข้อความ</p>
+              </div>
+            )}
           </div>
-        )}
     </div>
   );
 };

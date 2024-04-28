@@ -38,28 +38,28 @@ const Scene4 = ({ toNextScene }: Scene4Props) => {
       <div className="mt-8 mx-4">
         {second >= 1 && (
           <div className="my-4 w-min rounded-2xl px-4 py-2 bg-white">
-            <p className="whitespace-nowrap text-3xl">ตื่นยังอะ</p>
+            <p className="whitespace-nowrap text-2xl">ตื่นยังอะ</p>
           </div>
         )}
         {second >= 2 && (
           <div className="my-4 w-min rounded-2xl px-4 py-2 bg-white">
-            <p className="whitespace-nowrap text-3xl">เราตื่นละ</p>
+            <p className="whitespace-nowrap text-2xl">เราตื่นละ</p>
           </div>
         )}
         {second >= 3 && (
           <div className="my-4 w-min rounded-2xl px-4 py-2 bg-white">
-            <p className="whitespace-nowrap text-3xl">
+            <p className="whitespace-nowrap text-2xl">
               สรุปจะไปคาเฟ่หมาหรือแมว
             </p>
           </div>
         )}
       </div>
       {second >= 4 && (
-        <div className="mt-16 mx-8">
-          <Link href="/quiz/dog" className="my-2 block w-full bg-brown-text rounded-3xl px-6 py-3 text-white text-3xl text-center">
+        <div className="absolute inset-x-0 bottom-24 mx-8">
+          <Link href="/quiz/dog" className="my-2 block w-full bg-brown-text rounded-3xl px-6 py-3 text-white text-2xl text-center">
             คาเฟ่หมา
           </Link>
-          <Link href="/quiz/cat" className="my-2 block w-full bg-brown-text rounded-3xl px-6 py-3 text-white text-3xl text-center">
+          <Link href="/quiz/cat" className="my-2 block w-full bg-brown-text rounded-3xl px-6 py-3 text-white text-2xl text-center">
             คาเฟ่แมว
           </Link>
         </div>
