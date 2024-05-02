@@ -25,8 +25,16 @@ const QuizPage = () => {
         <FadeInOut isShow={scene <= 2}>
           <Scene1 toNextScene={toNextScene} />
         </FadeInOut>
-        <Scene2 scene={scene} isShow={scene > 1 && scene <= 4} toNextScene={toNextScene} />
-        <Scene4 isShow={scene >= 4} toNextScene={toNextScene} />
+        <FadeInOut isShow={scene <= 3} delay={1000}>
+          <Scene2
+            scene={scene}
+            isShow={scene > 1 && scene <= 4}
+            toNextScene={toNextScene}
+          />
+        </FadeInOut>
+        <FadeInOut isShow={scene <= 4}>
+          <Scene4 isShow={scene >= 4} toNextScene={toNextScene} />
+        </FadeInOut>
         <FadeInOut isShow={scene <= 2} delay={0}>
           <Image
             className="object-cover"

@@ -9,6 +9,7 @@ import UserIcon from '@/components/icon/UserIcon';
 import { useSecond } from '@/hooks/useSecond';
 
 import LoopBG from '../LoopBG/LoopBG';
+import { useSoundAtom } from '@/stores/sound/useAtom';
 
 type Scene2Props = {
   scene: number;
@@ -52,9 +53,10 @@ const Scene3 = ({ toNextScene }: { toNextScene: () => void }) => {
 };
 
 const Scene2 = ({ scene, isShow, toNextScene }: Scene2Props) => {
+  const { isOn } = useSoundAtom();
   const audioRef = useRef<HTMLAudioElement>(null);
   useEffect(() => {
-    if (isShow) {
+    if (isShow && isOn) {
       audioRef.current?.play();
     }
   }, [isShow]);
