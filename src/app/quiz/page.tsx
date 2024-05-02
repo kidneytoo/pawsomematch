@@ -1,5 +1,7 @@
 'use client';
+import Image from 'next/image';
 
+import FadeInOut from '@/components/common/FadeInOut/FadeInOut';
 import Scene1 from '@/components/quiz/common/Scene1';
 import Scene2 from '@/components/quiz/common/Scene2';
 import Scene3 from '@/components/quiz/common/Scene3';
@@ -18,8 +20,24 @@ const QuizPage = () => {
   const Scene = SCENES[scene] ?? <></>;
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
-      <Scene toNextScene={toNextScene} />
+    <main className="bg-black flex min-h-screen flex-col items-center justify-between">
+      <div className="mx-auto w-full max-w-lg min-h-screen relative">
+        {/* <Scene toNextScene={toNextScene} /> */}
+        <FadeInOut isShow={scene <= 2}>
+          <Scene1 toNextScene={toNextScene} />
+        </FadeInOut>
+        <Scene2 scene={scene} isShow={scene === 2 || scene === 3} toNextScene={toNextScene} />
+        <FadeInOut isShow={scene <= 2} delay={0}>
+          <Image
+            className="object-cover"
+            src="/images/home/bg-home-01.webp"
+            alt="Home BG"
+            fill
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent bg-opacity-50 z-10" />
+        </FadeInOut>
+      </div>
     </main>
   );
 };

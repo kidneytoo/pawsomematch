@@ -29,7 +29,7 @@ const FadeInOut = ({
 
   return (
     <div
-      className={`fade-container ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+      className={`fade-container transition-opacity ${isVisible ? 'opacity-100' : 'opacity-0'}`}
       style={{ transitionDuration: `${duration}ms` }}
     >
       {children}

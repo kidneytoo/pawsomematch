@@ -17,7 +17,7 @@ const LoopBG = () => {
   };
 
   return (
-    <Image className="object-cover" src={getBGLoop()} alt="Loop BG" fill />
+    <Image className="object-cover" src={getBGLoop()} alt="Loop BG" fill priority />
   );
 };
 
