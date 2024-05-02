@@ -16,9 +16,9 @@ import SceneCatFamily from '@/components/quiz/cat/SceneCatFamily';
 import SceneCatHabit from '@/components/quiz/cat/SceneCatHabit';
 import SceneCatConfident from '@/components/quiz/cat/SceneCatConfident';
 import SceneCatResult from '@/components/quiz/cat/SceneCatResult';
+import FadeInOut from '@/components/common/FadeInOut/FadeInOut';
 
 const SCENES: Record<number, (props: any) => JSX.Element> = {
-  1: SceneCatChat,
   2: SceneCatPlace,
   3: SceneCatGo,
   4: SceneCatStaff,
@@ -42,7 +42,59 @@ const QuizCatPage = () => {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      <Scene toNextScene={toNextScene} />
+      {/* <Scene toNextScene={toNextScene} /> */}
+      <div className="mx-auto w-full max-w-lg min-h-screen relative">
+        <div className="absolute inset-0">
+          <FadeInOut isShow={scene === 1}>
+            <SceneCatPlace isShow={scene === 1} toNextScene={toNextScene} />
+          </FadeInOut>
+        </div>
+        <div className="absolute inset-0">
+          <FadeInOut isShow={scene === 2}>
+            <SceneCatGo toNextScene={toNextScene} />
+          </FadeInOut>
+        </div>
+        <div className="absolute inset-0">
+          <FadeInOut isShow={scene === 3}>
+            <SceneCatStaff toNextScene={toNextScene} />
+          </FadeInOut>
+        </div>
+        <div className="absolute inset-0">
+          <FadeInOut isShow={scene === 4}>
+            <SceneCatSelect isShow={scene === 4} toNextScene={toNextScene} />
+          </FadeInOut>
+        </div>
+        <div className="absolute inset-0">
+          <FadeInOut isShow={scene === 5}>
+            <SceneCatHair isShow={scene === 5} toNextScene={toNextScene} />
+          </FadeInOut>
+        </div>
+        <div className="absolute inset-0">
+          <FadeInOut isShow={scene === 6}>
+            <SceneCatTime isShow={scene === 6} toNextScene={toNextScene} />
+          </FadeInOut>
+        </div>
+        <div className="absolute inset-0">
+          <FadeInOut isShow={scene === 7}>
+            <SceneCatFamily toNextScene={toNextScene} />
+          </FadeInOut>
+        </div>
+        <div className="absolute inset-0">
+          <FadeInOut isShow={scene === 8}>
+            <SceneCatHabit isShow={scene === 8} toNextScene={toNextScene} />
+          </FadeInOut>
+        </div>
+        <div className="absolute inset-0">
+          <FadeInOut isShow={scene === 9}>
+            <SceneCatConfident isShow={scene === 9} toNextScene={toNextScene} />
+          </FadeInOut>
+        </div>
+        <div className="absolute inset-0">
+          <FadeInOut isShow={scene === 10}>
+            <SceneCatResult isShow={scene === 10} toNextScene={toNextScene} />
+          </FadeInOut>
+        </div>
+      </div>
     </main>
   );
 };

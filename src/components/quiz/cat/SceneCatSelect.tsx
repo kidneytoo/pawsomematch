@@ -10,11 +10,13 @@ import {
 import { useState } from 'react';
 import { FRIENDLY_CATS, NEUTRAL_CATS } from '@/constants/cat';
 import NextButton from '@/components/common/NextButton/NextButton';
+import FadeInOut from '@/components/common/FadeInOut/FadeInOut';
 
 type SceneDog5Props = {
+  isShow: boolean;
   toNextScene: () => void;
 };
-const SceneCatSelect = ({ toNextScene }: SceneDog5Props) => {
+const SceneCatSelect = ({ isShow, toNextScene }: SceneDog5Props) => {
   const [current, setCurrent] = useState(1);
   const { addScore, updateAnswer } = useResultAtom();
 
@@ -38,27 +40,27 @@ const SceneCatSelect = ({ toNextScene }: SceneDog5Props) => {
           {current < 3 && (
             <div className="mt-auto text-white text-center text-2xl flex flex-col items-center">
               {current === 1 ? (
-                <>
+                <FadeInOut isShow={current === 1}>
                   <p className="my-1">พนักงานพาคุณและเพื่อน</p>
                   <p className="my-1">ไปที่โซนน้องแมวสุดน่ารัก</p>
-                </>
+                </FadeInOut>
               ) : (
-                <>
+                <FadeInOut isShow={current === 2}>
                   <p className="my-1">คุณเห็นน้องแมวมากมาย</p>
                   <p className="my-1">บางตัวเข้ามาหา</p>
                   <p className="my-1">บางตัวนอนเล่น</p>
-                </>
+                </FadeInOut>
               )}
               <div className="mt-8">
                 <NextButton
-                  onClick={() => current < 3 && setCurrent(current + 1)}
+                  onClick={() => isShow && current < 3 && setCurrent(current + 1)}
                 />
               </div>
             </div>
           )}
           {current === 3 && (
             <>
-              <div className="mt-auto text-center text-2xl flex flex-col items-center text-white">
+              <div className="mt-auto text-center text-2xl flex flex-col items-center text-white animate-fade">
                 <p className="my-1">คุณเห็นน้องแมวมากมาย</p>
                 <p className="my-1">บางตัวเข้ามาหา</p>
                 <p className="mb-4">บางตัวนอนเล่น คุณเลือกที่จะ</p>

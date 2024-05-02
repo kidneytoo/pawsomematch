@@ -28,7 +28,12 @@ const Header = () => {
         )}
       >
         <div className="mx-auto max-w-lg flex items-center justify-between">
-          <button className="w-8 h-8 p-1" onClick={() => setSound({isOn:!isOn, isClick: true})}>
+          <button
+            className="w-8 h-8 p-1"
+            onClick={() =>
+              setSound((prev) => ({ ...prev, isOn: !isOn, isClick: true }))
+            }
+          >
             <SoundIcon isOn={isOn} />
           </button>
           <button

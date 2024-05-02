@@ -15,7 +15,7 @@ type SceneDogResultProps = {
   toNextScene: () => void;
 };
 const SceneDogResult = ({ isShow, toNextScene }: SceneDogResultProps) => {
-  const { audioRef } = useSoundAtom();
+  const { setSound } = useSoundAtom();
   const [current, setCurrent] = useState(1);
   const [dog, setDog] = useState<AnimalResult | null>(null);
   const { getMostScore } = useResultAtom();
@@ -23,7 +23,7 @@ const SceneDogResult = ({ isShow, toNextScene }: SceneDogResultProps) => {
   useEffect(() => {
     if (isShow) {
       setDog(getDog(getMostScore()));
-      audioRef.current?.pause();
+      setSound((prev) => ({ ...prev, toResult: true }))
     }
   }, [isShow]);
 

@@ -5,11 +5,13 @@ import { useResultAtom } from '@/stores/result/useAtom';
 import { useState } from 'react';
 import { LONG_HAIR_CATS, SHORT_HAIR_CATS } from '@/constants/cat';
 import NextButton from '@/components/common/NextButton/NextButton';
+import FadeInOut from '@/components/common/FadeInOut/FadeInOut';
 
 type SceneDog6Props = {
+  isShow: boolean;
   toNextScene: () => void;
 };
-const SceneCatHair = ({ toNextScene }: SceneDog6Props) => {
+const SceneCatHair = ({ isShow, toNextScene }: SceneDog6Props) => {
   const [current, setCurrent] = useState(2);
   const { addScore, updateAnswer } = useResultAtom();
 
@@ -35,25 +37,25 @@ const SceneCatHair = ({ toNextScene }: SceneDog6Props) => {
           {current < 3 && (
             <div className="mt-auto text-white text-center text-2xl flex flex-col items-center">
               {current === 1 ? (
-                <>
+                <FadeInOut isShow={current === 1}>
                   <p className="my-1">คุณเห็นน้องแมวมากมาย</p>
                   <p className="my-1">ที่พร้อมจะเล่นกับคุณ</p>
-                </>
+                </FadeInOut>
               ) : (
-                <>
+                <FadeInOut isShow={current === 2}>
                   <p className="my-1">คุณพบกับน้องแมว</p>
                   <p className="my-1">ที่ชอบตัวหนึ่ง</p>
-                </>
+                </FadeInOut>
               )}
               <div className="mt-8">
                 <NextButton
-                  onClick={() => setCurrent(current + 1)}
+                  onClick={() => isShow && setCurrent(current + 1)}
                 />
               </div>
             </div>
           )}
           {current === 3 && (
-            <div className="mt-auto text-white text-center text-2xl flex flex-col items-center">
+            <div className="mt-auto text-white text-center text-2xl flex flex-col items-center animate-fade">
               <p className="my-1">เมื่อคุณอยู่กับน้องแมวตัวนั้น</p>
               <p className="my-1">คุณจึงลูบหัวลูบตัวมัน</p>
               <p className="mb-4">คุณรู้สึกถึง ...</p>

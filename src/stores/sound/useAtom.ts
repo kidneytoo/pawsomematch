@@ -7,7 +7,7 @@ import { set } from 'firebase/database';
 
 export const useSoundAtom = () => {
   const pathname = usePathname();
-  const [{ isOn, isClick }, setSound] = useAtom(soundAtom);
+  const [{ isOn, isClick, toResult }, setSound] = useAtom(soundAtom);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
@@ -19,6 +19,12 @@ export const useSoundAtom = () => {
       }
     }
   }, [isOn, isClick]);
+
+  useEffect(() => {
+    if (toResult) {
+      audioRef.current?.pause();
+    }
+  }, [toResult])
 
   return { isOn, setSound, audioRef };
 };

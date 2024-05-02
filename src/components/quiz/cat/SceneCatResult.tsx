@@ -5,15 +5,26 @@ import { useEffect, useState } from 'react';
 import { redirect } from 'next/navigation';
 import { getCat } from '@/helpers/cat';
 import NextButton from '@/components/common/NextButton/NextButton';
+import { useSoundAtom } from '@/stores/sound/useAtom';
+import { AnimalResult } from '@/types/animal';
+import { twMerge } from 'tailwind-merge';
 
 type SceneDogResultProps = {
+  isShow: boolean;
   toNextScene: () => void;
 };
-const SceneCatResult = ({ toNextScene }: SceneDogResultProps) => {
+const SceneCatResult = ({ isShow, toNextScene }: SceneDogResultProps) => {
+  const { setSound } = useSoundAtom();
+  const [cat, setCat] = useState<AnimalResult | null>(null);
   const [current, setCurrent] = useState(1);
   const { getMostScore } = useResultAtom();
 
-  const cat = getCat(getMostScore());
+  useEffect(() => {
+    if (isShow) {
+      setCat(getCat(getMostScore()));
+      setSound((prev) => ({ ...prev, toResult: true }))
+    }
+  }, [isShow]);
 
   useEffect(() => {
     if (current > 2) {
@@ -26,14 +37,14 @@ const SceneCatResult = ({ toNextScene }: SceneDogResultProps) => {
       className="mx-auto w-full max-w-lg min-h-screen relative"
     >
       <Image
-        className="object-cover"
+        className={twMerge("object-cover transition-opacity duration-500", current === 2 ? 'opacity-100' : 'opacity-0')}
         src={cat?.image.sketch ?? ''}
         alt="Home BG"
         fill
       />
       {current === 1 && <div className="absolute inset-0 bg-[#231F20] z-10" />}
       {current === 2 && (
-        <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent bg-opacity-50 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent bg-opacity-50 z-10 animate-fade" />
       )}
       <>
         {current === 1 && (
@@ -55,7 +66,7 @@ const SceneCatResult = ({ toNextScene }: SceneDogResultProps) => {
                 </p>
               </>)}
               <div className="mt-8">
-                <NextButton onClick={() => setCurrent(current + 1)} />
+                <NextButton onClick={() => isShow && setCurrent(current + 1)} />
               </div>
             </div>
           </div>
