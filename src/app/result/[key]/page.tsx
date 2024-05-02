@@ -7,6 +7,7 @@ import ResultInfo from '@/components/result/ResultInfo/ResultInfo';
 import { getCat } from '@/helpers/cat';
 import { getDog } from '@/helpers/dog';
 import SaveButton from '@/components/result/SaveButton/SaveButton';
+import Header from '@/components/layout/Header/Header';
 
 type ResulePageProps = {
   params: {
@@ -31,8 +32,9 @@ const ResultPage = ({ params: { key } }: ResulePageProps) => {
 
   return (
     <div className="bg-result min-h-screen">
+      <Header result />
       <div className="mx-auto max-w-md px-4 py-4">
-        <div>
+        <div className="mt-12">
           <div className="-mx-2 my-4 flex items-end">
             <div className="w-5/12 px-2">
               <ResultImage image={animal.image} name={animal.name} />

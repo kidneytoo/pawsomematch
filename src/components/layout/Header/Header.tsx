@@ -10,7 +10,7 @@ import { useParams, usePathname, useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-const Header = () => {
+const Header = ({ result }: { result?: boolean }) => {
   const [isShow, setIsShow] = useState(false);
   const { isOn, setSound } = useSoundAtom();
 
@@ -24,23 +24,27 @@ const Header = () => {
     <>
       <header
         className={twMerge(
-          'h-12 z-40 py-2 px-4 w-full fixed inset-x-0 transition-all duration-300 bg-gradient-to-b from-[#DBD0BE] to-[#F2E5D1]'
+          'h-12 z-40 py-2 px-4 w-full fixed inset-x-0 transition-all duration-300', result ? 'bg-transparent' : 'bg-gradient-to-b from-[#DBD0BE] to-[#F2E5D1]'
         )}
       >
         <div className="mx-auto max-w-lg flex items-center justify-between">
-          <button
-            className="w-8 h-8 p-1"
-            onClick={() =>
-              setSound((prev) => ({ ...prev, isOn: !isOn, isClick: true }))
-            }
-          >
-            <SoundIcon isOn={isOn} />
-          </button>
+          {result ? (
+            <div />
+          ) : (
+            <button
+              className="w-8 h-8 p-1"
+              onClick={() =>
+                setSound((prev) => ({ ...prev, isOn: !isOn, isClick: true }))
+              }
+            >
+              <SoundIcon isOn={isOn} />
+            </button>
+          )}
           <button
             type="button"
             aria-controls="mobile-menu"
             aria-expanded="false"
-            className="text-white"
+            className={twMerge(result ? "text-brown-text" : "text-white")}
             onClick={() => setIsShow(!isShow)}
           >
             <span className="sr-only">Open main menu</span>
