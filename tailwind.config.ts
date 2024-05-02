@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       animation: {
-				fade: 'fadeIn .5s ease-in-out',
+				fade: 'fadeIn 1s ease-in-out',
 			},
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

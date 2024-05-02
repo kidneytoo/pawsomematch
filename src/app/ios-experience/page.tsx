@@ -19,20 +19,13 @@ export default function Home() {
               height={91}
             />
           </div>
-          <div className="mt-6 rounded-2xl shadow-md w-[250px] h-[200px] overflow-hidden relative">
-            <Image
-              className="object-cover object-home"
-              src="/images/home/bg-home-01.webp"
-              alt="Home BG"
-              fill
-            />
+          <div className="mt-6 text-center text-brown-text text-lg">
+            <p className="font-bold my-1">เพื่อประสบการณ์ที่ดีในการเล่น</p>
+            <p className="my-1">แนะนำให้กดซ่อนแทบเครื่องมือ</p>
+            <p className="my-1">หากท่านใช้งานผ่าน Safari</p>
           </div>
-          <div className="my-6">
-            <div className="text-center font-bold text-brown-text text-2xl">
-              <p className="my-2">คุณเหมาะกับน้องหมา</p>
-              <p>น้องแมว พันธุ์ไหนกันนะ</p>
-            </div>
-          </div>
+          <Image className="mt-8 mb-4" src="/images/ios-experience/1.jpg" alt="iOS 1" width={300} height={54} />
+          <Image className="mb-8" src="/images/ios-experience/2.jpg" alt="iOS 2" width={200} height={135} />
           <div className="my-4">
             <NextButton type="link" href={isIOS() ? "ios-experience" : "/pre-intro"} />
           </div>
