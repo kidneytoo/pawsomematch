@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between bg-[#F2E5D1]">
       <Header />
-      <div className="mx-auto w-full max-w-lg min-h-screen relative">
+      <div className="mx-auto w-full max-w-lg min-h-screen relative flex flex-col">
         <div className="mt-16 flex flex-col items-center">
           <div>
             <Image
@@ -37,7 +37,7 @@ export default function Home() {
             <NextButton type="link" href={isIOS() ? "ios-experience" : "/pre-intro"} />
           </div>
         </div>
-        <div className="mt-8 py-4 flex justify-center">
+        <div className="mt-auto py-6 flex justify-center">
           <FooterLogo />
         </div>
       </div>

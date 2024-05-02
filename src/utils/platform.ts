@@ -1,5 +1,7 @@
-import platform from 'platform';
-
 export const isIOS = () => {
-  return platform.os?.family === 'iOS';
-}
+  const ua = navigator.userAgent;
+  return (
+    /iPad|iPhone|iPod/.test(ua) ||
+    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+  );
+};
