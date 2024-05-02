@@ -45,7 +45,7 @@ const SceneDog8 = ({ toNextScene }: SceneDog8Props) => {
           className="absolute inset-x-0 bottom-24 z-20 px-8"
         >
           {current === 1 && (
-            <div className="mt-auto text-white text-center text-2xl flex flex-col items-center">
+            <div className="mt-auto text-white text-center text-2xl flex flex-col items-center animate-fade">
               <p className="mb-4">อืมม แล้วที่บ้านล่ะ?</p>
               <button
                 className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-xl"
@@ -76,7 +76,7 @@ const SceneDog8 = ({ toNextScene }: SceneDog8Props) => {
             </div>
           )}
           {current === 2 && (
-            <div className="mt-auto text-white text-center text-2xl flex flex-col items-center">
+            <div className="mt-auto text-white text-center text-2xl flex flex-col items-center animate-fade">
               <p className="mb-4">ห่วงเรื่องไรที่บ้านที่สุดหรอ?</p>
               <button
                 className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-xl"

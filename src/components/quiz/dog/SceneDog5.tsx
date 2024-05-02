@@ -9,6 +9,7 @@ import {
 } from '@/constants/dog';
 import { useState } from 'react';
 import NextButton from '@/components/common/NextButton/NextButton';
+import FadeInOut from '@/components/common/FadeInOut/FadeInOut';
 
 type SceneDog5Props = {
   toNextScene: () => void;
@@ -29,13 +30,11 @@ const SceneDog5 = ({ toNextScene }: SceneDog5Props) => {
 
   const handleSelect = (answer: string) => {
     updateAnswer(answer);
-    toNextScene();
+    setCurrent(current + 1);
   };
 
   return (
-    <div
-      className="mx-auto w-full max-w-lg min-h-screen relative"
-    >
+    <div className="mx-auto w-full max-w-lg min-h-screen relative">
       <Image
         className="object-cover"
         src="/images/quiz/bg-staff-dog.webp"
@@ -48,23 +47,25 @@ const SceneDog5 = ({ toNextScene }: SceneDog5Props) => {
           {current < 3 && (
             <div className="mt-auto text-white text-center text-2xl flex flex-col items-center">
               {current === 1 ? (
-                <>
+                <FadeInOut isShow={current === 1}>
                   <p className="my-1">พนักงานพาคุณและเพื่อน</p>
                   <p className="my-1">ไปที่โซน{getText()}</p>
-                </>
+                </FadeInOut>
               ) : (
-                <>
+                <FadeInOut isShow={current === 2}>
                   <p className="my-1">ระหว่างเดินไปคุณได้ยิน</p>
                   <p className="my-1">เสียงหมาเห่าดังขึ้นเรื่อย ๆ</p>
-                </>
+                </FadeInOut>
               )}
               <div className="mt-8">
-                <NextButton onClick={() => current < 3 && setCurrent(current + 1)} />
+                <NextButton
+                  onClick={() => current < 3 && setCurrent(current + 1)}
+                />
               </div>
             </div>
           )}
           {current === 3 && (
-            <div className="mt-auto text-white text-center text-2xl flex flex-col items-center">
+            <div className="mt-auto text-white text-center text-2xl flex flex-col items-center animate-fade">
               <p className="my-1">ระหว่างเดินไปคุณได้ยิน</p>
               <p className="my-1">เสียงหมาเห่าดังขึ้นเรื่อย ๆ</p>
               <p className="mb-6">คุณรู้สึกอย่างไร</p>
@@ -86,6 +87,19 @@ const SceneDog5 = ({ toNextScene }: SceneDog5Props) => {
               >
                 ตื่นเต้นที่จะได้พบน้องหมา
               </button>
+            </div>
+          )}
+          {current > 3 && (
+            <div className="mt-auto text-white text-center text-2xl flex flex-col items-center">
+              <FadeInOut isShow={current === 4}>
+                  <p className="my-1">คุณเห็นน้องหมามากมาย</p>
+                  <p className="my-1">ที่พร้อมจะเล่นกับคุณ</p>
+                </FadeInOut>
+              <div className="mt-8 animate-fade">
+                <NextButton
+                  onClick={() => toNextScene()}
+                />
+              </div>
             </div>
           )}
         </div>

@@ -18,26 +18,11 @@ import { useQuiz } from '@/hooks/useQuiz';
 import { useResultAtom } from '@/stores/result/useAtom';
 import SceneDogConfident from '@/components/quiz/dog/SceneDogConfident';
 import SceneDogResult from '@/components/quiz/dog/SceneDogResult';
-
-const SCENES: Record<number, (props: any) => JSX.Element> = {
-  1: SceneDog1,
-  2: SceneDog2,
-  3: SceneDog3,
-  4: SceneDog4,
-  5: SceneDog5,
-  6: SceneDog6,
-  7: SceneDog7,
-  8: SceneDog8,
-  9: SceneDogBudget,
-  10: SceneDogHabit,
-  11: SceneDogConfident,
-  12: SceneDogResult,
-};
+import FadeInOut from '@/components/common/FadeInOut/FadeInOut';
 
 const QuizDogPage = () => {
   const { scene, toNextScene } = useQuiz();
   const { setPools } = useResultAtom();
-  const Scene = SCENES[scene] ?? <></>;
 
   useEffect(() => {
     setPools(DOG_POOLS);
@@ -45,7 +30,67 @@ const QuizDogPage = () => {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      <Scene toNextScene={toNextScene} />
+      {/* <Scene toNextScene={toNextScene} /> */}
+      <div className="mx-auto w-full max-w-lg min-h-screen relative">
+        <div className="absolute inset-0">
+          <FadeInOut isShow={scene === 1}>
+            <SceneDog2 isShow={scene === 1} toNextScene={toNextScene} />
+          </FadeInOut>
+        </div>
+        <div className="absolute inset-0">
+          <FadeInOut isShow={scene === 2}>
+            <SceneDog3 toNextScene={toNextScene} />
+          </FadeInOut>
+        </div>
+        <div className="absolute inset-0">
+          <FadeInOut isShow={scene === 3}>
+            <SceneDog4 toNextScene={toNextScene} />
+          </FadeInOut>
+        </div>
+        <div className="absolute inset-0">
+          <FadeInOut isShow={scene === 4}>
+            <SceneDog5 toNextScene={toNextScene} />
+          </FadeInOut>
+        </div>
+        <div className="absolute inset-0">
+          <FadeInOut isShow={scene === 5}>
+            <SceneDog6 toNextScene={toNextScene} />
+          </FadeInOut>
+        </div>
+        <div className="absolute inset-0">
+          <FadeInOut isShow={scene === 6}>
+            <SceneDog7 isShow={scene === 6} toNextScene={toNextScene} />
+          </FadeInOut>
+        </div>
+        <div className="absolute inset-0">
+          <FadeInOut isShow={scene === 7}>
+            <SceneDog8 toNextScene={toNextScene} />
+          </FadeInOut>
+        </div>
+        <div className="absolute inset-0">
+          <FadeInOut isShow={scene === 8}>
+            <SceneDogBudget toNextScene={toNextScene} />
+          </FadeInOut>
+        </div>
+        <div className="absolute inset-0">
+          <FadeInOut isShow={scene === 9}>
+            <SceneDogHabit isShow={scene === 9} toNextScene={toNextScene} />
+          </FadeInOut>
+        </div>
+        <div className="absolute inset-0">
+          <FadeInOut isShow={scene === 10}>
+            <SceneDogConfident
+              isShow={scene === 10}
+              toNextScene={toNextScene}
+            />
+          </FadeInOut>
+        </div>
+        <div className="absolute inset-0">
+          <FadeInOut isShow={scene === 11}>
+            <SceneDogResult isShow={scene === 11} toNextScene={toNextScene} />
+          </FadeInOut>
+        </div>
+      </div>
     </main>
   );
 };

@@ -2,21 +2,24 @@ import Image from 'next/image';
 
 import { useResultAtom } from '@/stores/result/useAtom';
 import { APARTMENT_DOGS, DOG_POOLS } from '@/constants/dog';
+import { useSecond } from '@/hooks/useSecond';
 
 type SceneDog2Props = {
+  isShow: boolean;
   toNextScene: () => void;
 };
-const SceneDog2 = ({ toNextScene }: SceneDog2Props) => {
+const SceneDog2 = ({ isShow, toNextScene }: SceneDog2Props) => {
   const { filterPools, updateAnswer } = useResultAtom();
+  const second = useSecond(isShow);
 
   const handleSelect = (pools: string[], answer: string) => {
     filterPools(pools);
     updateAnswer(answer);
     toNextScene();
-  }
+  };
 
   return (
-    <div className="mx-auto w-full max-w-lg min-h-screen relative">
+    <>
       <Image
         className="object-cover"
         src="/images/quiz/bg-home-02.webp"
@@ -33,23 +36,25 @@ const SceneDog2 = ({ toNextScene }: SceneDog2Props) => {
           </div>
         </div>
       </>
-      <>
-        <div className="absolute inset-x-0 bottom-28 z-20 flex flex-col items-center px-16">
-          <div className="mx-auto max-w-sm">
-          <button
-            className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-xl"
-            onClick={() => handleSelect(APARTMENT_DOGS, 'apartment')}>
-            อพาร์ตเมนต์ของตัวเอง
-          </button>
-          <button
-            className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-xl"
-            onClick={() => handleSelect(DOG_POOLS, 'home')}>
-            บ้านของตัวเอง
-          </button>
+        <>
+          <div className="absolute inset-x-0 bottom-28 z-20 flex flex-col items-center px-16 animate-fade">
+            <div className="mx-auto max-w-sm">
+              <button
+                className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-xl"
+                onClick={() => handleSelect(APARTMENT_DOGS, 'apartment')}
+              >
+                อพาร์ตเมนต์ของตัวเอง
+              </button>
+              <button
+                className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-xl"
+                onClick={() => handleSelect(DOG_POOLS, 'home')}
+              >
+                บ้านของตัวเอง
+              </button>
+            </div>
           </div>
-        </div>
-      </>
-    </div>
+        </>
+    </>
   );
 };
 

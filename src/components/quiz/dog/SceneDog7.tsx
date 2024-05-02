@@ -12,11 +12,14 @@ import {
 } from '@/constants/dog';
 import { useState } from 'react';
 import NextButton from '@/components/common/NextButton/NextButton';
+import FadeInOut from '@/components/common/FadeInOut/FadeInOut';
+import { twMerge } from 'tailwind-merge';
 
 type SceneDog6Props = {
+  isShow: boolean;
   toNextScene: () => void;
 };
-const SceneDog7 = ({ toNextScene }: SceneDog6Props) => {
+const SceneDog7 = ({ isShow, toNextScene }: SceneDog6Props) => {
   const [current, setCurrent] = useState(1);
   const { addScore, removeScore, updateAnswer } = useResultAtom();
 
@@ -31,16 +34,22 @@ const SceneDog7 = ({ toNextScene }: SceneDog6Props) => {
   };
 
   return (
-    <div
-      className="mx-auto w-full max-w-lg min-h-screen relative"
-    >
+    <div className="mx-auto w-full max-w-lg min-h-screen relative">
       <Image
-        className="object-cover"
-        src={
-          current <= 2
-            ? '/images/quiz/bg-friend-dog.webp'
-            : '/images/quiz/bg-time.webp'
-        }
+        className={twMerge(
+          'object-cover transition-opacity duration-500',
+          current <= 2 ? 'opacity-100' : 'opacity-0'
+        )}
+        src="/images/quiz/bg-friend-dog.webp"
+        alt="Home BG"
+        fill
+      />
+      <Image
+        className={twMerge(
+          'object-cover transition-opacity duration-500',
+          current > 2 ? 'opacity-100' : 'opacity-0'
+        )}
+        src="/images/quiz/bg-time.webp"
         alt="Home BG"
         fill
       />
@@ -50,27 +59,27 @@ const SceneDog7 = ({ toNextScene }: SceneDog6Props) => {
           {current < 3 && (
             <div className="mt-auto text-white text-center text-2xl flex flex-col items-center">
               {current === 1 ? (
-                <>
+                <FadeInOut isShow={current === 1}>
                   <p className="my-1">เพื่อนของคุณเดินเข้ามาหา</p>
-                </>
+                </FadeInOut>
               ) : (
-                <>
+                <FadeInOut isShow={current === 2}>
                   <p className="my-1">ชอบจริง ๆ เลยนะหมาเนี่ย</p>
                   <p className="my-1 whitespace-nowrap">
                     เห็นบ่นอยากเลี้ยงอยู่นั่นแหละ...
                   </p>
                   <p className="my-1">ทำไมไม่เลี้ยงไว้สักตัวล่ะ</p>
-                </>
+                </FadeInOut>
               )}
               <div className="mt-6">
                 <NextButton
-                  onClick={() => current < 3 && setCurrent(current + 1)}
+                  onClick={() => (isShow && current < 3) && setCurrent(current + 1)}
                 />
               </div>
             </div>
           )}
           {current === 3 && (
-            <div className="mt-auto text-white text-center text-2xl flex flex-col items-center">
+            <div className="mt-auto text-white text-center text-2xl flex flex-col items-center animate-fade">
               <p className="mb-4">ติดเรื่องเวลาหรอ?</p>
               <button
                 className="my-1 w-full bg-white rounded-2xl px-6 py-2 text-brown-text text-xl"
