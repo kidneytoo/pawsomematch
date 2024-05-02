@@ -3,18 +3,13 @@ import NextButton from '@/components/common/NextButton/NextButton';
 import { useSecond } from '@/hooks/useSecond';
 
 type PreIntro1Props = {
+  isShow: boolean;
   toNextScene: () => void;
 };
-const PreIntro1 = ({ toNextScene }: PreIntro1Props) => {
-  const second = useSecond();
+const PreIntro1 = ({ isShow, toNextScene }: PreIntro1Props) => {
+  const second = useSecond(isShow);
   return (
-    <div className="mx-auto w-full max-w-lg min-h-screen relative">
-      <Image
-        className="object-cover"
-        src="/images/home/bg-home-01.webp"
-        alt="Home BG"
-        fill
-      />
+    <>
       <div className="absolute inset-x-0 top-24 z-20 animate-fade">
         <div className="mt-auto text-brown-text text-center text-2xl flex flex-col items-center">
           <p className="my-1">เมื่อคุณอยากเลี้ยงสัตว์ตัวแรก</p>
@@ -31,7 +26,7 @@ const PreIntro1 = ({ toNextScene }: PreIntro1Props) => {
           )}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

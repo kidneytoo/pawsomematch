@@ -4,18 +4,13 @@ import { useSecond } from '@/hooks/useSecond';
 import { redirect } from 'next/navigation';
 
 type PreIntro2Props = {
+  isShow: boolean;
   toNextScene: () => void;
 };
-const PreIntro2 = ({ toNextScene }: PreIntro2Props) => {
-  const second = useSecond();
+const PreIntro2 = ({ isShow, toNextScene }: PreIntro2Props) => {
+  const second = useSecond(isShow);
   return (
-    <div className="mx-auto w-full max-w-lg min-h-screen relative">
-      <Image
-        className="object-cover"
-        src="/images/home/bg-home-01.webp"
-        alt="Home BG"
-        fill
-      />
+    <>
       <div className="absolute inset-x-0 top-24 z-20 animate-fade">
         <div className="mt-auto text-brown-text text-center text-2xl flex flex-col items-center">
           <p className="my-1">คุณจะได้รับบทบาทสมมติ</p>
@@ -32,7 +27,7 @@ const PreIntro2 = ({ toNextScene }: PreIntro2Props) => {
           )}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

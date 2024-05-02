@@ -4,18 +4,13 @@ import { useSecond } from '@/hooks/useSecond';
 import { redirect } from 'next/navigation';
 
 type PreIntro3Props = {
+  isShow: boolean;
   toNextScene: () => void;
 };
-const PreIntro3 = ({ toNextScene }: PreIntro3Props) => {
-  const second = useSecond();
+const PreIntro3 = ({ isShow, toNextScene }: PreIntro3Props) => {
+  const second = useSecond(isShow);
   return (
-    <div className="mx-auto w-full max-w-lg min-h-screen relative">
-      <Image
-        className="object-cover"
-        src="/images/home/bg-home-01.webp"
-        alt="Home BG"
-        fill
-      />
+    <>
       <div className="absolute inset-x-0 top-24 z-20 animate-fade">
         <div className="mt-auto text-brown-text text-center text-2xl flex flex-col items-center">
           <p className="my-1">เพื่อที่จะดูว่าคุณน่าจะเหมาะ</p>
@@ -33,7 +28,7 @@ const PreIntro3 = ({ toNextScene }: PreIntro3Props) => {
           )}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

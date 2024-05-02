@@ -22,11 +22,14 @@ const FadeInOut = ({
 
       return () => clearTimeout(timer);
     }
+    else {
+      setIsVisible(false);
+    }
   }, [isShow, delay]);
 
   return (
     <div
-      className={`fade-container ${isVisible ? 'fade-in' : 'fade-out'}`}
+      className={`fade-container ${isVisible ? 'opacity-100' : 'opacity-0'}`}
       style={{ transitionDuration: `${duration}ms` }}
     >
       {children}
