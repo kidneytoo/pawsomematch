@@ -23,6 +23,7 @@ const SceneCatPlace = ({ isShow, toNextScene }: SceneDog2Props) => {
         src="/images/quiz/bg-home-02.webp"
         alt="Home BG"
         fill
+        priority
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent bg-opacity-50 z-10" />
       <>
