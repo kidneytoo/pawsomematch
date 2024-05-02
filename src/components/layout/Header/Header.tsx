@@ -2,14 +2,17 @@
 
 import Credit from '@/components/home/Credit/Credit';
 import FooterLogo from '@/components/home/FooterLogo/FooterLogo';
+import SoundIcon from '@/components/icon/SoundIcon';
+import { useSoundAtom } from '@/stores/sound/useAtom';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/20/solid';
 import Image from 'next/image';
 import { useParams, usePathname, useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 const Header = () => {
   const [isShow, setIsShow] = useState(false);
+  const { isOn, setIsOn } = useSoundAtom();
 
   const isHideHeader = false;
 
@@ -25,7 +28,9 @@ const Header = () => {
         )}
       >
         <div className="mx-auto max-w-lg flex items-center justify-between">
-          <div />
+          <button className="w-8 h-8 p-1" onClick={() => setIsOn(!isOn)}>
+            <SoundIcon isOn={isOn} />
+          </button>
           <button
             type="button"
             aria-controls="mobile-menu"
@@ -49,7 +54,9 @@ const Header = () => {
         )}
       >
         <div className="h-full flex flex-col">
-          <div className="flex-grow overflow-y-scroll"><Credit /></div>
+          <div className="flex-grow overflow-y-scroll">
+            <Credit />
+          </div>
           <div className="py-4 flex justify-center">
             <FooterLogo />
           </div>

@@ -27,7 +27,7 @@ const PreIntro2 = ({ toNextScene }: PreIntro2Props) => {
         <div className="mt-auto text-white text-center text-2xl flex flex-col items-center">
           {second >= 2 && (
             <div className="mt-6 animate-fade">
-              <NextButton type="link" href="/quiz" />
+              <NextButton onClick={toNextScene} />
             </div>
           )}
         </div>

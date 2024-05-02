@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .fade-container {
+    opacity: 0;
+  }
+  
+  .fade-in {
+    opacity: 1;
+  }
+}
