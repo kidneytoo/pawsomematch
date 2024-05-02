@@ -1,9 +1,8 @@
 import Image from 'next/image';
 
-import NextButton from '@/components/common/NextButton/NextButton';
-import Header from '@/components/layout/Header/Header';
 import FooterLogo from '@/components/home/FooterLogo/FooterLogo';
-import { isIOS } from '@/utils/platform';
+import IosButton from '@/components/home/IosButton/IosButton';
+import Header from '@/components/layout/Header/Header';
 
 export default function Home() {
   return (
@@ -34,7 +33,7 @@ export default function Home() {
             </div>
           </div>
           <div className="my-4">
-            <NextButton type="link" href={isIOS() ? "ios-experience" : "/pre-intro"} />
+            <IosButton />
           </div>
         </div>
         <div className="mt-auto py-6 flex justify-center">
