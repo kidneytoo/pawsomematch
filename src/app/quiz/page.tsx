@@ -17,16 +17,16 @@ const SCENES: Record<number, (props: any) => JSX.Element> = {
 
 const QuizPage = () => {
   const { scene, toNextScene } = useQuiz();
-  const Scene = SCENES[scene] ?? <></>;
 
   return (
-    <main className="bg-black flex min-h-screen flex-col items-center justify-between">
-      <div className="mx-auto w-full max-w-lg min-h-screen relative">
+    <main className="flex min-h-screen flex-col items-center justify-between">
+      <div className="mx-auto w-full max-w-lg min-h-screen relative overflow-y-hidden">
         {/* <Scene toNextScene={toNextScene} /> */}
         <FadeInOut isShow={scene <= 2}>
           <Scene1 toNextScene={toNextScene} />
         </FadeInOut>
-        <Scene2 scene={scene} isShow={scene === 2 || scene === 3} toNextScene={toNextScene} />
+        <Scene2 scene={scene} isShow={scene > 1 && scene <= 4} toNextScene={toNextScene} />
+        <Scene4 isShow={scene >= 4} toNextScene={toNextScene} />
         <FadeInOut isShow={scene <= 2} delay={0}>
           <Image
             className="object-cover"

@@ -12,7 +12,7 @@ import { twMerge } from 'tailwind-merge';
 
 const Header = () => {
   const [isShow, setIsShow] = useState(false);
-  const { isOn, setIsOn } = useSoundAtom();
+  const { isOn, setSound } = useSoundAtom();
 
   const isHideHeader = false;
 
@@ -28,7 +28,7 @@ const Header = () => {
         )}
       >
         <div className="mx-auto max-w-lg flex items-center justify-between">
-          <button className="w-8 h-8 p-1" onClick={() => setIsOn(!isOn)}>
+          <button className="w-8 h-8 p-1" onClick={() => setSound({isOn:!isOn, isClick: true})}>
             <SoundIcon isOn={isOn} />
           </button>
           <button

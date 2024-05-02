@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 
-export const useSecond = (status?: boolean) => {
+export const useSecond = (status?: boolean, delay: number = 1000) => {
   const [second, setSecond] = useState(0);
 
   useEffect(() => {
     const interval = setTimeout(() => {
       setSecond(0);
-    }, 1000);
+    }, delay);
     return () => clearTimeout(interval);
   }, [status]);
 

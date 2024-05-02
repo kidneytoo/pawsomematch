@@ -2,20 +2,23 @@ import { useAtom } from 'jotai';
 import { useEffect, useRef } from 'react';
 
 import { soundAtom } from './atom';
+import { usePathname } from 'next/navigation';
+import { set } from 'firebase/database';
 
 export const useSoundAtom = () => {
-  const [isOn, setIsOn] = useAtom(soundAtom);
+  const pathname = usePathname();
+  const [{ isOn, isClick }, setSound] = useAtom(soundAtom);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
     if (audioRef.current) {
-      if (isOn) {
+      if (isOn && isClick) {
         audioRef.current.play();
       } else {
         audioRef.current.pause();
       }
     }
-  }, [isOn]);
+  }, [isOn, isClick]);
 
-  return { isOn, setIsOn, audioRef };
+  return { isOn, setSound, audioRef };
 };
